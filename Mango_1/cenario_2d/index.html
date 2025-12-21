@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" style="--posYPersonagem: 1; --imagePersonagem: url(./assets/personagem/tras/little-man-1-32px_tras_1.png); --posXPersonagem: 1;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cenário 2D - ZduardoxX</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Cenário 2D</h1>
+    <hr>
+    
+    <main class="spaceGame">
+        <div class="placar">
+            <div class="pontos">
+                <span>Pontos</span>
+                <span id="idValorPontos">0</span>
+            </div>
+            <div class="tempo">
+                <span>Tempo</span>
+                <span id="idValorTempo">30</span>
+            </div>
+        </div>
+
+        <section id="idMapa" class="blocks">
+            <div id="idPersonagem" class="personagem"></div>
+            <span id="idChest1" class="chest" style="grid-column: 4; grid-row: 3;"></span>
+            <!-- <span id="idMoedaOuro1" class="moedaOuro"></span>
+            <span id="idMoedaOuro2" class="moedaOuro"></span>
+            <span id="idMoedaOuro3" class="moedaOuro"></span>
+            <span id="idMoedaOuro4" class="moedaOuro"></span> -->
+        </section>
+    </main>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>

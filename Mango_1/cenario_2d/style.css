@@ -1,0 +1,95 @@
+:root {
+    --imagePersonagem: url(./assets/personagem/tras/little-man-1-32px_tras_1.png);
+    --posYPersonagem: 1;
+    --posXPersonagem: 1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Começo Título */
+h1 {
+    margin: 2rem;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+/* Fim Título */
+
+/* Começo Espaço do Jogo */
+.spaceGame {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Começo Placar */
+.placar {
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+    margin-bottom: .5rem;
+}
+
+.placar .pontos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.placar .tempo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+}
+
+/* Fim Placar */
+
+/* Mapa do Jogo */
+.blocks {
+    position: relative;
+    width: 800px;
+    height: 480px;
+    display: grid;
+    grid-template: repeat(30, 16px) / repeat(50, 16px);
+    background-image: url(./assets/firstGrama.png);
+    image-rendering: pixelated;
+}
+
+/* Personagem */
+.personagem {
+    background-image: var(--imagePersonagem);
+    background-position: center;
+    background-size: cover;
+    width: 16px;
+    height: 32px;
+    grid-column: var(--posXPersonagem);
+    grid-row: var(--posYPersonagem);
+    /* position: absolute; */
+    transition: 1s;
+    z-index: 2;
+}
+
+/* Skin do Baú */
+.chest {
+    background-image: url(assets/objetos/chest.png);
+}
+
+/* Skin da Moeda de Ouro */
+.moedaOuro {
+    background-image: url(assets/objetos/moedaOuro.png);
+}
+
+/* Posição do Baú 1 */
+#idChest1 {
+    grid-column: 4;
+    grid-row: 3;
+}
+/* Fim Espaço do Jogo */
