@@ -1,10 +1,10 @@
 # Jornada-Game
 Repositório criado para colocar minhas ideias em jogo e aproveitar para praticar conceitos de programação.
 
-# Intuito
+## Intuito
 Criei este repositório para desenvolver minhas habilidades de programação enquanto desenvolvo algumas das minhas ideias de jogos, então cada Mango seria um desafio/passo para uma ideia.
 
-## Mango 1
+### Mango 1
 Já aviso que acabei me empolgando por ser o meu primeiro.
 
 1- Criação: Criar um cenário com possibilidade de colocar um personagem e objetos.
@@ -19,3 +19,16 @@ Já aviso que acabei me empolgando por ser o meu primeiro.
 10- Upgrade: Transformar o sistema de criar moedas aleatórias para qualquer item aleatório.
 11- Criação: Criar um sistema de tempo.
 12- Upgrade: Fazer com que quando ele pegar todos os items antes do tempo acabar, ele finalize o jogo. Caso o tempo acabar antes o jogo finalize também.
+13- Criação: Criar mais um item (pedra).
+14- Criação: Criar um sistema que deixe o item solido e o personagem não consiga passar por cima.
+15- Upgrade: Adicionar o preventDefault para as setas, para não mexer na tela do site enquanto joga.
+16- Fix: Na parte de finalizar o jogo quando coletar tudo, trocar de .lenght para .filter, para não contar os blocos sólidos.
+
+### Mango 2
+Após uma conversa com a IA Gemini, tive algumas ideias para criar.
+
+1- Criar Npcs com missões, (pegar tantas Moedas, ir para tal local...)
+2- Criar um inventário no lado esquerdo da Tela.
+3- Criar um espaço para ver as missões no lado direito da Tela (Quest Log).
+4- Fazer teleportes para outros local.
+5- Pesquisar sobre fundos para dar sensações de tempos/temperaturas/horas diferentes.

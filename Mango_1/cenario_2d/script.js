@@ -11,39 +11,43 @@ window.addEventListener('keydown', (ev) => {
     let horizontal = Number(document.documentElement.style.getPropertyValue('--posXPersonagem'))
     
     if (tecla == 'ArrowUp' || tecla == 'w') {
+        ev.preventDefault()
         
         trocarSkinAndando('frente')
         
-        if (vertical > 1) {
+        if (vertical > 1 && possoAndarProximaLoc(horizontal, (vertical - 1))) { // Limita o personagem a não sair do mapa, limita o personagem a não passar por blocos sólidos.
             document.documentElement.style.setProperty('--posYPersonagem', (vertical - 1))
             locsItemsMapa[0].y = vertical - 1
         }
         
     } else if (tecla == 'ArrowDown' || tecla == 's') {
+        ev.preventDefault()
         
         trocarSkinAndando('tras')
         
-        if (vertical < 29) {
+        if (vertical < 29 && possoAndarProximaLoc(horizontal, (vertical + 1))) { // Limita o personagem a não sair do mapa, limita o personagem a não passar por blocos sólidos.
             document.documentElement.style.setProperty('--posYPersonagem', (vertical + 1))
             locsItemsMapa[0].y = vertical + 1
         }
     } else if (tecla == 'ArrowLeft' || tecla == 'a') {
+        ev.preventDefault()
         
         trocarSkinAndando('esquerda')
         
-        if (horizontal > 1) {
+        if (horizontal > 1 && possoAndarProximaLoc((horizontal - 1), vertical)) { // Limita o personagem a não sair do mapa, limita o personagem a não passar por blocos sólidos.
             document.documentElement.style.setProperty('--posXPersonagem', (horizontal - 1))
             locsItemsMapa[0].x = horizontal - 1
         }
     } else if (tecla == 'ArrowRight' || tecla == 'd') {
+        ev.preventDefault()
         
         trocarSkinAndando('direita')
         
-        if (horizontal < 50) {
+        if (horizontal < 50 && possoAndarProximaLoc((horizontal + 1), vertical)) { // Limita o personagem a não sair do mapa, limita o personagem a não passar por blocos sólidos.
             document.documentElement.style.setProperty('--posXPersonagem', (horizontal + 1))
             locsItemsMapa[0].x = horizontal + 1
         }
-    } else if (tecla == 'p') {
+    } else if (tecla == 'p') { // Atualiz a página, então reinicia o jogo
         window.location.reload()
     }
     passarPorMoeda()
@@ -88,8 +92,8 @@ function trocarSkinAndando(lado) {
 function gerarItemsAleatorias(nameItem, classNameItem, quantidade) {
     let items = []
     for (let i = 0; i < quantidade; i++) {
-        let moeda = document.createElement('span')
-        moeda.classList.add(classNameItem)
+        let item = document.createElement('span')
+        item.classList.add(classNameItem)
 
         let vertical = 0
         let horizontal = 0
@@ -121,16 +125,17 @@ function gerarItemsAleatorias(nameItem, classNameItem, quantidade) {
             }
         }
 
-        moeda.style.gridColumn = horizontal
-        moeda.style.gridRow = vertical
+        item.style.gridColumn = horizontal
+        item.style.gridRow = vertical
 
         // criação de um objeto para salvar em LOCSITEMSMAPA
-        let moedaObj = {}
-        moedaObj.nome = nameItem
-        moedaObj.x = horizontal
-        moedaObj.y = vertical
+        let itemObj = {}
+        itemObj.nome = nameItem
+        itemObj.x = horizontal
+        itemObj.y = vertical
+        itemObj.solid = false
 
-        items.push([moeda, moedaObj])
+        items.push([item, itemObj])
     }
 
     let mapa = document.getElementById('idMapa')
@@ -165,7 +170,8 @@ function passarPorMoeda() {
                     locsItemsMapa.splice(i, 1)
                 }
             }
-            if (locsItemsMapa.length == 1 && tempo > 0) {
+            // if (locsItemsMapa.length == 1 && tempo > 0) { // Aqui funcionava antes do Sistema de Solid, que sobrava apenas o personagem no mapa.
+            if ((locsItemsMapa.filter(item => item.solid == false)).length == 1 && tempo > 0) {
                 clearInterval(intervaloTempo)
                 alert(`Você venceu! Sobrou ${tempo} segundos.`)
                 alert("Clique 'p' para reiniciar o jogo.")
@@ -183,6 +189,26 @@ let intervaloTempo = setInterval(() => {
         clearInterval(intervaloTempo)
     }
 }, 1000);
+
+// Função para saber se tem item no lugar que você irá andar
+function possoAndarProximaLoc(x, y) {
+    for (let i = 1; i < locsItemsMapa.length; i++) { // Começando o contador em 1, ele não pega o personagem
+        if (locsItemsMapa[i].x == x && locsItemsMapa[i].y == (y + 1)) {
+            var proximoLocal = locsItemsMapa[i]
+            break
+        }
+    }
+    // let proximoLocal = locsItemsMapa.find(item => item.x == x && item.y == (y + 1))
+    if (proximoLocal) {
+        if (proximoLocal.solid) {
+            return false
+        } else {
+            return true
+        }
+    } else {
+        return true
+    }
+}
 
 gerarItemsAleatorias('Moeda de Ouro', 'moedaOuro', 10)
 gerarItemsAleatorias('Bau', 'chest', 5)
