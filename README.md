@@ -64,3 +64,8 @@ Após uma conversa com a IA Gemini, tive algumas ideias para criar. (Continuaç�
 
 3- Criação: Criar um sistema para separar itens coletaveis de itens não coletaveis como decoração, por exemplo uma flor no chão. (adicionei um novo campo "coletavel" no Objeto [locsItemsMapa]).
 
+4- Criação: Procurar uma skin para o primeiro NPC de missão.
+
+5- Criação: Criar um método de diálogo com o NPC, inicialmente o design.
+
+6- Criação: Criar uma tela para as missões.

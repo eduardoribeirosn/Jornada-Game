@@ -173,14 +173,12 @@ function passarPorItem() {
                     }
                 }
                 if (quantity > 0) {
-                    console.log('achou')
                     let itemColetado = invPersonagem.find(item => item.nomeItem == locsItemsMapa[i].nome)
                     itemColetado.quantidade += 1
                     let indiceItemColetado = (invPersonagem.findIndex(item => item.nomeItem == locsItemsMapa[i].nome) + 1)
                     console.log(indiceItemColetado)
                     document.getElementById(`idTdInventarioSpan${indiceItemColetado}`).textContent = itemColetado.quantidade
                 } else {
-                    console.log('não achou')
                     let newItemColetadoImg = document.createElement('img')
                     let newItemColetadoSpan = document.createElement('span')
 

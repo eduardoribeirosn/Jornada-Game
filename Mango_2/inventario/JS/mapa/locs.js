@@ -8,12 +8,12 @@ export let locsItemsMapa = [
         skin: ''
     },
     {
-        nome: 'Bau',
-        x: 4,
-        y: 3,
-        solid: false,
-        coletavel: true,
-        skin: './assets/objetos/chest.png'
+        nome: 'Npc Misterioso',
+        x: 10,
+        y: 2,
+        solid: true,
+        coletavel: false,
+        skin: 'assets/npc/npc_missao_1/misterioso.png'
     },
     {
         nome: 'Pedregulho',
