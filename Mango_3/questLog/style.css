@@ -84,6 +84,7 @@ h1 {
     background-color: rgb(233, 236, 42);
     border-radius: 1rem;
     padding: .5rem;
+    margin: .5rem;
 }
 
 .inventario .miniTitleInventario {
@@ -198,8 +199,9 @@ h1 {
 /* Começo do QuestLog */
 .questLog {
     width: 500px;
+    height: 300px;
     display: flex;
-    background-color: aqua;
+    margin: .5rem;
 }
 
 .questLog .sagas {
@@ -207,6 +209,12 @@ h1 {
     flex-direction: column;
     background-color: transparent;
     width: 20%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.questLog .sagas::-webkit-scrollbar {
+    display: none;
 }
 
 .questLog .sagas .saga {
@@ -215,43 +223,136 @@ h1 {
     width: 100%;
     height: 30px;
     margin-top: .5rem;
-    overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    overflow-y: auto;
+}
+
+.questLog .sagas .saga::-webkit-scrollbar {
+    display: none;
+}
+
+.questLog .sagas .sagaSelecionada {
+    background-color: #383838;
+    color: #fff;
+}
+
+.questLog .sagas .saga span {
+    width: 95%;
 }
 
 .questLog .containerQuest {
     background-color: #C6C6C6;
     display: flex;
     justify-content: center;
-    align-items: center;
     width: 80%;
+    border-radius: 0.2rem;
 }
 
 .questLog .containerQuest .containerQuestSagas {
     width: 40%;
     display: flex;
-    justify-content: flex-end;
     flex-direction: column;
 }
 
 .questLog .containerQuest .containerQuestSagas .questSagasTitle {
     width: 96%;
+    height: 20px;
+    margin-bottom: 3px;
     font-family: fantasy;
+    padding: 0.2rem;
+    overflow-y: auto;
+}
+
+.questLog .containerQuest .containerQuestSagas .questSagasTitle::-webkit-scrollbar {
+    display: none;
 }
 
 .questLog .containerQuest .containerQuestSagas .questSagasConteudo {
-    width: 96%;
+    width: 95%;
+    height: 90%;
     background-color: #383838;
     display: flex;
     flex-direction: column;
     color: #fff;
     align-items: center;
+    overflow-y: auto;
+    margin-left: .15rem;
+    border-radius: 0.2rem;
+}
+
+.questLog .containerQuest .containerQuestSagas .questSagasConteudo::-webkit-scrollbar {
+    display: none;
+}
+
+.questLog .containerQuest .containerQuestSagas .questSagasConteudo span {
+    width: 95%;
+    text-align: center;
+    margin-top: 0.3rem;
+}
+
+.questLog .containerQuest .containerQuestSagas .questSagasConteudo .questSelecionada {
+    border: solid 2px #fff;
 }
 
 .questLog .containerQuest .containerQuestAtual {
     width: 60%;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualTitle {
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    padding: .2rem;
+    overflow-y: auto;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualTitle::-webkit-scrollbar {
+    display: none;
+}
+
+.questLog .containerQuest .containerQuestAtual hr {
+    width: 98%;
+    background-color: #000;
+    height: 1px;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualConteudo {
+    width: 98%;
+    height: 88%;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualConteudo .objetivo {
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualConteudo .objetivo::-webkit-scrollbar {
+    display: none;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualConteudo .descricaoObjetivo {
+    height: 43%;
+    margin-top: 1rem;
+    overflow-y: auto;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualConteudo .descricaoObjetivo::-webkit-scrollbar {
+    display: none;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualConteudo .msgCompletar {
+    height: 10%;
+    margin-top: 1rem;
+    overflow-y: auto;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualConteudo .msgCompletar::-webkit-scrollbar {
+    display: none;
 }
 
 /* Fim do Jogo */
