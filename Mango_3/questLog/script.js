@@ -1,5 +1,6 @@
 import { locsItemsMapa} from "./JS/mapa/locs.js"
 import { invPersonagem } from "./JS/personagem/inventario.js"
+import { questLogPersonagem } from "./JS/personagem/missao/questLog.js"
 import { urlSkinsPersonagem } from "./JS/personagem/skin.js"
 
 let pontos = 0
@@ -252,5 +253,158 @@ function possoAndarProximaLoc(x, y) {
     }
 }
 
+// Função para passar as sagas para a Tela
+function montarQuestLogSagas() {
+    // Pegando o Objeto do QuestLog
+    let objQuestLogPersonagem = questLogPersonagem
+
+    // Pegando a tag Pai do QuestLog
+    let tagQuestLog = document.getElementById('idQuestLog')
+
+    // Criar um array com todas as sagas do Usuário / PARTE SAGAS
+    let sagasPersonagem = []
+    for (let i = 0; i < objQuestLogPersonagem.length; i++) {
+
+        let divCriada = document.createElement('div')
+        divCriada.classList.add('saga')
+        divCriada.id = `id${objQuestLogPersonagem[i].nomeSagaId}`
+
+        divCriada.addEventListener('click', () => {
+            montarQuestLogMissoes(objQuestLogPersonagem[i])
+        })
+
+        let spanCriado = document.createElement('span')
+        spanCriado.textContent = objQuestLogPersonagem[i].nomeSaga
+        
+        sagasPersonagem.push(
+            {
+                div: divCriada,
+                span: spanCriado
+            }
+        )
+    }
+
+    for (let i = 0; i < sagasPersonagem.length; i++) {
+        let divAtual = sagasPersonagem[i].div
+        divAtual.appendChild(sagasPersonagem[i].span)
+        tagQuestLog.querySelector('.sagas').appendChild(divAtual)
+    }
+    // FINAL PARTE SAGAS
+
+    montarQuestLogMissoes(objQuestLogPersonagem[0])
+}
+
+// Função para passar as missões para a Tela
+function montarQuestLogMissoes(sagaAtual) {
+    // Pegando a tag Pai do containerQuest
+    let tagContainerQuest = document.getElementById('idContainerQuest')
+
+    // Zerando as tags
+    tagContainerQuest.querySelector('.containerQuestSagas').querySelector('.questSagasTitle').replaceChildren()
+    tagContainerQuest.querySelector('.containerQuestSagas').querySelector('.questSagasConteudo').replaceChildren()
+
+    // Tirar a class Selecionada caso haja alguma
+    let listSagasAnterior = document.getElementsByClassName('saga')
+    for (let i = 0; i < listSagasAnterior.length; i++) {
+        if (listSagasAnterior[i].classList.contains('sagaSelecionada')) {
+            listSagasAnterior[i].classList.remove('sagaSelecionada')
+        }
+    }
+    // Colocar a class Selecionada na saga Selecionada
+    let listSagas = document.getElementsByClassName('saga')
+    for (let i = 0; i < listSagas.length; i++) {
+        if (listSagas[i].id == `id${sagaAtual.nomeSagaId}`) {
+            listSagas[i].classList.add('sagaSelecionada')
+        }
+    }
+
+    // Cria o título da saga
+    let tituloSaga = document.createElement('span')
+    tituloSaga.textContent = `${sagaAtual.nomeSaga}`
+
+    tagContainerQuest.querySelector('.containerQuestSagas').querySelector('.questSagasTitle').appendChild(tituloSaga)
+
+    // Cria as missões da saga
+    let missoesSaga = []
+    for (let i = 0; i < sagaAtual.missoes.length; i++) {
+        let missaoSaga = document.createElement('span')
+        missaoSaga.textContent = `${sagaAtual.missoes[i].nomeMissao}`
+
+        missaoSaga.addEventListener('click', () => {
+            montarQuestLogMissaoSelecionada(sagaAtual.missoes[i])
+        })
+        
+        missoesSaga.push(missaoSaga)
+    }
+
+    for (let i = 0; i < missoesSaga.length; i++) {
+        tagContainerQuest.querySelector('.containerQuestSagas').querySelector('.questSagasConteudo').appendChild(missoesSaga[i])
+    }
+
+    montarQuestLogMissaoSelecionada(sagaAtual.missoes[0])
+}
+
+// Função para passar a missão Selecionada para a Tela
+function montarQuestLogMissaoSelecionada(missaoAtual) {
+    // Pegando a tag Pai do containerQuestAtual
+    let tagContainerQuestAtual = document.getElementById('idContainerQuestAtual')
+
+    // Zerando as tags
+    tagContainerQuestAtual.querySelector('.questAtualTitle').replaceChildren()
+    tagContainerQuestAtual.querySelector('.questAtualConteudo').querySelector('.objetivo').replaceChildren()
+    tagContainerQuestAtual.querySelector('.questAtualConteudo').querySelector('.descricaoObjetivo').replaceChildren()
+    tagContainerQuestAtual.querySelector('.questAtualConteudo').querySelector('.msgCompletar').replaceChildren()
+
+    // Tirar a class Selecionada caso haja alguma
+    let questSagasConteudoAnterior = document.getElementById('idQuestSagasConteudo')
+    let listMissionsAnterior = questSagasConteudoAnterior.getElementsByTagName('span')
+    for (let i = 0; i < listMissionsAnterior.length; i++) {
+        if (listMissionsAnterior[i].classList.contains('questSelecionada')) {
+            listMissionsAnterior[i].classList.remove('questSelecionada')
+        }
+    }
+    // Colocar a class Selecionada na missao Selecionada
+    let questSagasConteudo = document.getElementById('idQuestSagasConteudo')
+    let listMissions = questSagasConteudo.getElementsByTagName('span')
+    for (let i = 0; i < listMissions.length; i++) {
+        if (listMissions[i].textContent == `${missaoAtual.nomeMissao}`) {
+            listMissions[i].classList.add('questSelecionada')
+        }
+    }
+
+    // Cria um título da missão
+    let tituloMissao = document.createElement('span')
+    tituloMissao.textContent = `${missaoAtual.nomeMissao}`
+
+    tagContainerQuestAtual.querySelector('.questAtualTitle').appendChild(tituloMissao)
+
+    // Cria o conteúdo da missão - objetivo
+    let listObjectives = []
+    for (let i = 0; i < missaoAtual.objetivo.length; i++) {
+        let objetivoMissao = document.createElement('span')
+        objetivoMissao.textContent = missaoAtual.objetivo[i].getTextObjective()
+
+        listObjectives.push(objetivoMissao)
+    }
+
+    for (let i = 0; i < listObjectives.length; i++) {
+        tagContainerQuestAtual.querySelector('.questAtualConteudo').querySelector('.objetivo').appendChild(listObjectives[i])
+    }
+    
+    // Cria o conteúdo da missão - descricaoObjetivo
+    let descricaoObjetivoMissao = document.createElement('span')
+    descricaoObjetivoMissao.textContent = missaoAtual.descricaoObjetivo
+
+    tagContainerQuestAtual.querySelector('.questAtualConteudo').querySelector('.descricaoObjetivo').appendChild(descricaoObjetivoMissao)
+
+    // Cria o conteúdo da missão - msgCompletar
+    let msgCompletarMissao = document.createElement('span')
+    msgCompletarMissao.textContent = missaoAtual.msgCompletar
+
+    tagContainerQuestAtual.querySelector('.questAtualConteudo').querySelector('.msgCompletar').appendChild(msgCompletarMissao)
+}
+
 gerarItemsAleatorias('Moeda de Ouro', 'moedaOuro', 10, './assets/objetos/moedaOuro.png')
 gerarItemsAleatorias('Bau', 'chest', 5, './assets/objetos/chest.png')
+
+montarQuestLogSagas()

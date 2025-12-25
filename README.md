@@ -78,3 +78,5 @@ Continuação do Mango_2 (Quebrei o Mango_2 em alguns mangos...)
 2- Criação: Criar um método de diálogo com o NPC, inicialmente o design.
 
 3- Criação: Criar uma tela para as missões (Design).
+
+4- Criação: Criar um sistema e integrar ele com a tela de missões.  
