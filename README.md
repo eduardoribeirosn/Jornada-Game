@@ -45,15 +45,8 @@ Após uma conversa com a IA Gemini, tive algumas ideias para criar. (Continuaç�
 {
 ##### Coisas a Fazer no Mango_2
 
-    1- Criar Npcs com missões, (pegar tantas Moedas, ir para tal local...)
+    - Criar um inventário no lado esquerdo da Tela.
 
-    2- Criar um inventário no lado esquerdo da Tela.
-
-    3- Criar um espaço para ver as missões no lado direito da Tela (Quest Log).
-
-    4- Fazer teleportes para outros local.
-
-    5- Pesquisar sobre fundos para dar sensações de tempos/temperaturas/horas diferentes.
 }
 
 1- Criação: Criar uma tela para inventário.
@@ -64,8 +57,24 @@ Após uma conversa com a IA Gemini, tive algumas ideias para criar. (Continuaç�
 
 3- Criação: Criar um sistema para separar itens coletaveis de itens não coletaveis como decoração, por exemplo uma flor no chão. (adicionei um novo campo "coletavel" no Objeto [locsItemsMapa]).
 
-4- Criação: Procurar uma skin para o primeiro NPC de missão.
+### Mango 3
+Continuação do Mango_2 (Quebrei o Mango_2 em alguns mangos...)
 
-5- Criação: Criar um método de diálogo com o NPC, inicialmente o design.
+{
+    
+##### Coisas a Fazer no Mango_3
 
-6- Criação: Criar uma tela para as missões.
+    1- Criar um espaço para ver as missões no lado direito da Tela (Quest Log).
+    
+    2- Criar Npcs com missões, (pegar tantas Moedas, ir para tal local...)
+
+    3- Fazer teleportes para outros local.
+
+    4- Pesquisar sobre fundos para dar sensações de tempos/temperaturas/horas diferentes.
+}
+
+1- Criação: Procurar uma skin para o primeiro NPC de missão.
+
+2- Criação: Criar um método de diálogo com o NPC, inicialmente o design.
+
+3- Criação: Criar uma tela para as missões.

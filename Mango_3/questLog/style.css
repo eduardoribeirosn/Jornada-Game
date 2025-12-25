@@ -1,0 +1,259 @@
+:root {
+    --imagePersonagem: url(./assets/personagem/tras/little-man-1-32px_tras_1.png);
+    --posYPersonagem: 1;
+    --posXPersonagem: 1;
+
+    /* Fonts */
+    --FontTitle: "Press Start 2P", system-ui;
+    --FontItens1: "VT323", monospace;
+    --FontItens2: "Pixelify Sans", sans-serif; /* 400 e 700 */
+    --FontQuantidade: "Silkscreen", sans-serif; /* 400 e 700 */
+    --FontPlacar: "DotGothic16", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Começo Título */
+h1 {
+    margin: 2rem;
+    text-align: center;
+    font-family: var(--FontTitle);
+}
+/* Fim Título */
+
+/* Começo Espaço do Jogo */
+.spaceGame {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Config do Top */
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Config do Top */
+
+/* Começo Placar */
+.placar {
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+    margin-bottom: .5rem;
+    font-family: var(--FontPlacar);
+}
+
+.placar .pontos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.placar .tempo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+}
+
+/* Fim Placar */
+
+/* Config Mid */
+.mid {
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* Config Mid */
+
+/* Começo do Inventário */
+.inventario {
+    background-color: rgb(233, 236, 42);
+    border-radius: 1rem;
+    padding: .5rem;
+}
+
+.inventario .miniTitleInventario {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--FontTitle);
+    margin: .5rem;
+}
+
+.inventario tr {
+    display: flex;
+}
+
+.inventario td {
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 1px solid #000;
+    border-radius: .5rem;
+    margin: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inventario td img {
+    width: 1.2rem;
+}
+
+.inventario td span {
+    font-size: .8rem;
+    font-family: var(--FontQuantidade);
+    font-size: 700;
+}
+
+/* Fim do Inventário */
+
+/* Mapa do Jogo */
+.blocks {
+    position: relative;
+    width: 800px;
+    height: 480px;
+    display: grid;
+    grid-template: repeat(30, 16px) / repeat(50, 16px);
+    background-image: url(./assets/firstGrama.png);
+    image-rendering: pixelated;
+}
+
+/* Personagem */
+.personagem {
+    background-image: var(--imagePersonagem);
+    background-position: center;
+    background-size: cover;
+    width: 16px;
+    height: 32px;
+    grid-column: var(--posXPersonagem);
+    grid-row: var(--posYPersonagem);
+    transition: 1s;
+    z-index: 2;
+}
+
+/* Skin do Baú */
+.chest {
+    background-image: url(assets/objetos/chest.png);
+}
+
+/* Skin da Moeda de Ouro */
+.moedaOuro {
+    background-image: url(assets/objetos/moedaOuro.png);
+}
+
+/* Skin do Pedregulho */
+.pedregulho {
+    background-image: url(assets/objetos/pedregulho.png);
+}
+
+/* Skin do Npc Misterioso */
+.misterioso {
+    background-image: url(assets/npc/npc_missao_1/misterioso.png);
+    background-position: center;
+    background-size: cover;
+    height: 2rem;
+}
+
+/* Dialogo do Npc Misterioso */
+.dialogoNpcMisterioso {
+    background-color: rgba(20, 26, 85, 0.8);
+    position: absolute;
+    top: -30px;
+    left: 120px;
+    font-size: .4rem;
+    font-family: var(--FontItens2);
+    width: 120px;
+    height: 1.4rem;
+    overflow-y: auto;
+    padding: 0.3rem;
+    border-radius: .4rem;
+}
+
+.dialogoNpcMisterioso::-webkit-scrollbar {
+    display: none;
+}
+
+/* Posição do Baú 1 */
+#idChest1 {
+    grid-column: 4;
+    grid-row: 3;
+}
+
+/* Começo do QuestLog */
+.questLog {
+    width: 500px;
+    display: flex;
+    background-color: aqua;
+}
+
+.questLog .sagas {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    width: 20%;
+}
+
+.questLog .sagas .saga {
+    font-size: .8rem;
+    background-color: #b9b2b2;
+    width: 100%;
+    height: 30px;
+    margin-top: .5rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.questLog .containerQuest {
+    background-color: #C6C6C6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+}
+
+.questLog .containerQuest .containerQuestSagas {
+    width: 40%;
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+}
+
+.questLog .containerQuest .containerQuestSagas .questSagasTitle {
+    width: 96%;
+    font-family: fantasy;
+}
+
+.questLog .containerQuest .containerQuestSagas .questSagasConteudo {
+    width: 96%;
+    background-color: #383838;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    align-items: center;
+}
+
+.questLog .containerQuest .containerQuestAtual {
+    width: 60%;
+}
+
+/* Fim do Jogo */
+
+/* Fim Espaço do Jogo */

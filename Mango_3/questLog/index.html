@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" style="--posYPersonagem: 1; --imagePersonagem: url(./assets/personagem/tras/little-man-1-32px_tras_1.png); --posXPersonagem: 1;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventário - ZduardoxX</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Inventário</h1>
+    <hr>
+    
+    <main class="spaceGame">
+        <div class="top">
+            <div class="left"></div>
+            <div class="placar">
+                <div class="pontos">
+                    <span>Pontos</span>
+                    <span id="idValorPontos">0</span>
+                </div>
+                <div class="tempo">
+                    <span>Tempo</span>
+                    <span id="idValorTempo">30</span>
+                </div>
+            </div>
+            <div class="right"></div>
+        </div>
+
+        <div class="mid">
+            <section class="left">
+                <div class="inventario">
+                    <span class="miniTitleInventario">Inventário</span>
+                    <table>
+                        <tr>
+                            <td id="idTdInventario1"></td>
+                            <td id="idTdInventario2"></td>
+                            <td id="idTdInventario3"></td>
+                            <td id="idTdInventario4"></td>
+                            <td id="idTdInventario5"></td>
+                            <td id="idTdInventario6"></td>
+                        </tr>
+                        <tr>
+                            <td id="idTdInventario7"></td>
+                            <td id="idTdInventario8"></td>
+                            <td id="idTdInventario9"></td>
+                            <td id="idTdInventario10"></td>
+                            <td id="idTdInventario11"></td>
+                            <td id="idTdInventario12"></td>
+                        </tr>
+                        <tr>
+                            <td id="idTdInventario13"></td>
+                            <td id="idTdInventario14"></td>
+                            <td id="idTdInventario15"></td>
+                            <td id="idTdInventario16"></td>
+                            <td id="idTdInventario17"></td>
+                            <td id="idTdInventario18"></td>
+                        </tr>
+                        <tr>
+                            <td id="idTdInventario19"></td>
+                            <td id="idTdInventario20"></td>
+                            <td id="idTdInventario21"></td>
+                            <td id="idTdInventario22"></td>
+                            <td id="idTdInventario23"></td>
+                            <td id="idTdInventario24"></td>
+                        </tr>
+                        <tr>
+                            <td id="idTdInventario25"></td>
+                            <td id="idTdInventario26"></td>
+                            <td id="idTdInventario27"></td>
+                            <td id="idTdInventario28"></td>
+                            <td id="idTdInventario29"></td>
+                            <td id="idTdInventario30"></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <section id="idMapa" class="blocks">
+                <div id="idPersonagem" class="personagem"></div>
+                <span id="idPedra1" class="pedregulho" style="grid-column: 3; grid-row: 3;"></span>
+                <span id="idPedra2" class="pedregulho" style="grid-column: 3; grid-row: 4;"></span>
+                <span id="idPedra3" class="pedregulho" style="grid-column: 3; grid-row: 5;"></span>
+                <span id="idPedra4" class="pedregulho" style="grid-column: 3; grid-row: 6;"></span>
+                <span id="idPedra5" class="pedregulho" style="grid-column: 3; grid-row: 7;"></span>
+                <span class="misterioso" style="grid-column: 10; grid-row: 1;"></span>
+                <article class="dialogoNpcMisterioso">Misterioso: As sombras sussurram que você busca o caminho através do portão... mas o guardião exige um tributo de luz. Traga-me 20 Moedas de Ouro perdidas nestas terras. Somente quando o brilho do metal for suficiente para cegar o abismo, eu revelarei a passagem oculta. Vá, pequeno viajante, o tempo é um luxo que você não possui. <br><br> --PRESS SPACE--</article>
+            </section>
+            <section class="right">
+                <div class="questLog">
+                    <div class="sagas">
+                        <div class="saga" id="saga1">
+                            <span>Saga Clássica</span>
+                        </div>
+                        <div class="saga" id="saga2">
+                            <span>Saga Shippuden</span>
+                        </div>
+                    </div>
+
+                    <div class="containerQuest">
+                        <div class="containerQuestSagas">
+                            <div class="questSagasTitle">
+                                <span>Saga Clássica</span>
+                            </div>
+                            <div class="questSagasConteudo">
+                                <span>Missão 1</span>
+                                <span>Missão 2</span>
+                            </div>
+                        </div>
+
+                        <div class="containerQuestAtual">
+                            <div class="questAtualTitle">
+                                <span>Missão 1</span>
+                            </div>
+                            <hr>
+                            <div class="questAtualConteudo">
+                                <div class="objetivo">
+                                    <span>- Mizuki: 0/1</span>
+                                </div>
+                                <div class="msgQuest">
+                                    <span>Complete com o Iruka</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
