@@ -79,4 +79,10 @@ Continuação do Mango_2 (Quebrei o Mango_2 em alguns mangos...)
 
 3- Criação: Criar uma tela para as missões (Design).
 
-4- Criação: Criar um sistema e integrar ele com a tela de missões.  
+4- Criação: Criar um sistema e integrar ele com a tela de missões. (Sistema para passar as quests de um mero objeto para a tela)
+
+5- Criação: Criar algo que quando clicar em uma missão selecionada, era não estará mais selecionada.
+
+6- Criação: Criar um sistema de interação com o NPC, vara vir o diálogo e ganhar a missão.
+
+7- Criação: Criar um sistema que passa a missão do NPC para o questLog do Personagem.

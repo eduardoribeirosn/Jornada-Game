@@ -1,3 +1,4 @@
+import { interagirAll } from "./JS/interacao/interagir.js"
 import { locsItemsMapa} from "./JS/mapa/locs.js"
 import { invPersonagem } from "./JS/personagem/inventario.js"
 import { questLogPersonagem } from "./JS/personagem/missao/questLog.js"
@@ -12,7 +13,7 @@ window.addEventListener('keydown', (ev) => {
     let vertical = Number(document.documentElement.style.getPropertyValue('--posYPersonagem'))
     let horizontal = Number(document.documentElement.style.getPropertyValue('--posXPersonagem'))
     
-    if (tecla == 'ArrowUp' || tecla == 'w') {
+    if (tecla == 'ArrowUp' || tecla.toLowerCase() == 'w') {
         ev.preventDefault()
         
         trocarSkinAndando('frente')
@@ -22,7 +23,7 @@ window.addEventListener('keydown', (ev) => {
             locsItemsMapa[0].y = vertical - 1
         }
         
-    } else if (tecla == 'ArrowDown' || tecla == 's') {
+    } else if (tecla == 'ArrowDown' || tecla.toLowerCase() == 's') {
         ev.preventDefault()
         
         trocarSkinAndando('tras')
@@ -31,7 +32,7 @@ window.addEventListener('keydown', (ev) => {
             document.documentElement.style.setProperty('--posYPersonagem', (vertical + 1))
             locsItemsMapa[0].y = vertical + 1
         }
-    } else if (tecla == 'ArrowLeft' || tecla == 'a') {
+    } else if (tecla == 'ArrowLeft' || tecla.toLowerCase() == 'a') {
         ev.preventDefault()
         
         trocarSkinAndando('esquerda')
@@ -40,7 +41,7 @@ window.addEventListener('keydown', (ev) => {
             document.documentElement.style.setProperty('--posXPersonagem', (horizontal - 1))
             locsItemsMapa[0].x = horizontal - 1
         }
-    } else if (tecla == 'ArrowRight' || tecla == 'd') {
+    } else if (tecla == 'ArrowRight' || tecla.toLowerCase() == 'd') {
         ev.preventDefault()
         
         trocarSkinAndando('direita')
@@ -49,10 +50,14 @@ window.addEventListener('keydown', (ev) => {
             document.documentElement.style.setProperty('--posXPersonagem', (horizontal + 1))
             locsItemsMapa[0].x = horizontal + 1
         }
-    } else if (tecla == 'p') { // Atualiz a página, então reinicia o jogo
+    } else if (tecla.toLowerCase() == 'p') { // Atualiz a página, então reinicia o jogo
         window.location.reload()
+    } else if (tecla == ' ') {
+        interagirAll()
     }
     passarPorItem()
+    // console.log(locsItemsMapa[0].x)
+    // console.log(locsItemsMapa[0].y)
 })
 
 // Função para o personagem se movimentar quando andar
@@ -138,6 +143,7 @@ function gerarItemsAleatorias(nameItem, classNameItem, quantidade, skinItem) {
         itemObj.solid = false
         itemObj.coletavel = true
         itemObj.skin = skinItem
+        itemObj.npc = false
 
         items.push([item, itemObj])
     }
@@ -255,6 +261,12 @@ function possoAndarProximaLoc(x, y) {
 
 // Função para passar as sagas para a Tela
 function montarQuestLogSagas() {
+    // Pegando a tag Pai do containerSagas
+    let tagContainerSagas = document.getElementById('idQuestLog').querySelector('.sagas')
+
+    // Zera tudo 
+    tagContainerSagas.replaceChildren()
+
     // Pegando o Objeto do QuestLog
     let objQuestLogPersonagem = questLogPersonagem
 
@@ -346,8 +358,31 @@ function montarQuestLogMissoes(sagaAtual) {
 
 // Função para passar a missão Selecionada para a Tela
 function montarQuestLogMissaoSelecionada(missaoAtual) {
+
     // Pegando a tag Pai do containerQuestAtual
     let tagContainerQuestAtual = document.getElementById('idContainerQuestAtual')
+
+    // Caso a quest clicada já esteja selecionada, irá ser desativada
+    let questSagasConteudoTest = document.getElementById('idQuestSagasConteudo')
+    let testMissions = questSagasConteudoTest.getElementsByTagName('span')
+    for (let i = 0; i < testMissions.length; i++) {
+        if (testMissions[i].textContent == `${missaoAtual.nomeMissao}`) {
+            if (testMissions[i].classList.contains('questSelecionada')) {
+                testMissions[i].classList.remove('questSelecionada')
+
+                // Pegando a tag Pai do containerQuestAtual
+                let tagContainerQuestAtual = document.getElementById('idContainerQuestAtual')
+
+                // Zerando as tags
+                tagContainerQuestAtual.querySelector('.questAtualTitle').replaceChildren()
+                tagContainerQuestAtual.querySelector('.questAtualConteudo').querySelector('.objetivo').replaceChildren()
+                tagContainerQuestAtual.querySelector('.questAtualConteudo').querySelector('.descricaoObjetivo').replaceChildren()
+                tagContainerQuestAtual.querySelector('.questAtualConteudo').querySelector('.msgCompletar').replaceChildren()
+
+                return
+            }
+        }
+    }
 
     // Zerando as tags
     tagContainerQuestAtual.querySelector('.questAtualTitle').replaceChildren()
@@ -402,6 +437,11 @@ function montarQuestLogMissaoSelecionada(missaoAtual) {
     msgCompletarMissao.textContent = missaoAtual.msgCompletar
 
     tagContainerQuestAtual.querySelector('.questAtualConteudo').querySelector('.msgCompletar').appendChild(msgCompletarMissao)
+}
+
+// Função para atualizar o questLog
+export function attQuestLog() {
+    montarQuestLogSagas()
 }
 
 gerarItemsAleatorias('Moeda de Ouro', 'moedaOuro', 10, './assets/objetos/moedaOuro.png')

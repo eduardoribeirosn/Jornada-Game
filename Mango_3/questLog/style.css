@@ -72,15 +72,23 @@ h1 {
 
 /* Config Mid */
 .mid {
-    width: 90%;
+    width: 95%;
     display: flex;
     justify-content: space-around;
     align-items: center;
+    position: relative;
 }
 /* Config Mid */
 
+/* MID LEFT */
+.left {
+    width: 500px;
+}
+/* Fim MID LEFT */
+
 /* Começo do Inventário */
 .inventario {
+    width: min-content;
     background-color: rgb(233, 236, 42);
     border-radius: 1rem;
     padding: .5rem;
@@ -172,21 +180,45 @@ h1 {
 }
 
 /* Dialogo do Npc Misterioso */
-.dialogoNpcMisterioso {
-    background-color: rgba(20, 26, 85, 0.8);
+.contentAbsolute {
+    background-color: rgba(13, 20, 85, 0.8);
     position: absolute;
-    top: -30px;
-    left: 120px;
-    font-size: .4rem;
-    font-family: var(--FontItens2);
-    width: 120px;
-    height: 1.4rem;
+    width: 35%;
+    height: 20vh;
     overflow-y: auto;
-    padding: 0.3rem;
     border-radius: .4rem;
 }
 
-.dialogoNpcMisterioso::-webkit-scrollbar {
+/* .dialogoNpc {
+    margin: .8rem;
+    color: #8f8c02;
+    font-size: 1.1rem;
+    font-family: var(--FontItens2);
+}
+
+.nameNpc {
+    color: #000;
+    font-size: 1.2rem;
+} */
+
+.respostas {
+    display: flex;
+    justify-content: space-around;
+}
+
+.accept {
+    color: #31b458;
+}
+
+.next {
+    color: #3195b4;
+}
+
+.fechar {
+    color: #b62727;
+}
+
+.contentAbsolute::-webkit-scrollbar {
     display: none;
 }
 
@@ -195,6 +227,13 @@ h1 {
     grid-column: 4;
     grid-row: 3;
 }
+
+
+/* MID RIGHT */
+.right {
+    width: 500px;
+}
+/* Fim MID RIGHT */
 
 /* Começo do QuestLog */
 .questLog {
