@@ -64,13 +64,13 @@ Continuação do Mango_2 (Quebrei o Mango_2 em alguns mangos...)
     
 ##### Coisas a Fazer no Mango_3
 
-    1- Criar um espaço para ver as missões no lado direito da Tela (Quest Log).
+    - Criar um espaço para ver as missões no lado direito da Tela (Quest Log).
     
-    2- Criar Npcs com missões, (pegar tantas Moedas, ir para tal local...)
+    - Criar Npcs com missões, (pegar tantas Moedas, ir para tal local...)
 
-    3- Fazer teleportes para outros local.
+    - Fazer teleportes para outros local.
 
-    4- Pesquisar sobre fundos para dar sensações de tempos/temperaturas/horas diferentes.
+    - Pesquisar sobre fundos para dar sensações de tempos/temperaturas/horas diferentes.
 }
 
 1- Criação: Procurar uma skin para o primeiro NPC de missão.
@@ -81,8 +81,10 @@ Continuação do Mango_2 (Quebrei o Mango_2 em alguns mangos...)
 
 4- Criação: Criar um sistema e integrar ele com a tela de missões. (Sistema para passar as quests de um mero objeto para a tela)
 
-5- Criação: Criar algo que quando clicar em uma missão selecionada, era não estará mais selecionada.
+5- Criação: Criar algo que quando clicar em uma missão selecionada, ela não estará mais selecionada.
 
 6- Criação: Criar um sistema de interação com o NPC, vara vir o diálogo e ganhar a missão.
 
 7- Criação: Criar um sistema que passa a missão do NPC para o questLog do Personagem.
+
+8- Upgrade: Melhorar o sistema, assim que o personagem completar a missão com o npc, tirar ela do questLog e passar ela pro histórico de missões finalizadas.

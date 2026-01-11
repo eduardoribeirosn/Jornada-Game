@@ -1,25 +1,31 @@
 import { missoesFinalizadasPersonagem } from "../../personagem/missao/missoesFinalizadas.js";
 import { questLogPersonagem } from "../../personagem/missao/questLog.js";
-import { dialogosNpcMisterioso } from "../dialogos/dialogoNpcs.js";
+import { completarMissao } from "../completar/completarMissao.js";
+import { dialogosNpcs } from "../dialogos/dialogoNpcs.js";
 import { darMissao } from "../missoes/darMissao.js";
 
 export function interagirNpcs(npcAtual) {
+    // Verifica se tem missão para completar com este NPC
+    if (completarMissao(npcAtual)) {
+        return
+    }
+    
     // Verifica se o personagem já finalizou a missão
-    let missaoFinalizada = false
+    let missaoFinalizadaAuxiliar = false
     for (let i = 0; i < npcAtual.quests.length; i++) {
         for (let saga_missaoFinalizada of missoesFinalizadasPersonagem) {
             if (npcAtual.quests[i].saga == saga_missaoFinalizada.nomeSaga) {
 
                 for (let missaoFinalizada of saga_missaoFinalizada.missoes) {
                     if (missaoFinalizada.nomeMissao == npcAtual.quests[i].missao) {
-                        missaoFinalizada = true
+                        missaoFinalizadaAuxiliar = true
                     }
                 }
             }
         }
     }
     
-    if (missaoFinalizada) {
+    if (missaoFinalizadaAuxiliar) {
         console.log('Personagem já finalizou essa missão')
     } else {
         console.log('NÃO FINALIZOU')
@@ -41,7 +47,6 @@ export function interagirNpcs(npcAtual) {
         if (missaoAtualQuestLog) {
             console.log('Missão no questLog')
             alert('Você já pegou a missão.')
-            // Fazer a verificação se ele já completou a missão. FAZERRRRRRRRRR
         } else {
             console.log('Não pegou a missão ainda')
             criarDialogo(npcAtual, 0)
@@ -52,11 +57,11 @@ export function interagirNpcs(npcAtual) {
 function criarDialogo(npcAtual, dialogoAtual) {
     // Identificação do diálogo
     let dialogoMissao = ''
-    for (let sagasMisteriosos of dialogosNpcMisterioso) {
-        if (sagasMisteriosos.nomeSaga == npcAtual.quests[0].saga) {
-            for (let missoesSagasMisteriosos of sagasMisteriosos.missoes) {
-                if (missoesSagasMisteriosos.nomeMissao == npcAtual.quests[0].missao) {
-                    dialogoMissao = missoesSagasMisteriosos.dialogos
+    for (let sagasDialogosNpc of dialogosNpcs) {
+        if (sagasDialogosNpc.nomeSaga == npcAtual.quests[0].saga) {
+            for (let missoesSagasDialogosNpc of sagasDialogosNpc.missoes) {
+                if (missoesSagasDialogosNpc.nomeMissao == npcAtual.quests[0].missao) {
+                    dialogoMissao = missoesSagasDialogosNpc.dialogos
                 }
             }
         }

@@ -7,6 +7,8 @@ import { urlSkinsPersonagem } from "./JS/personagem/skin.js"
 let pontos = 0
 let tempo = 30
 
+var trocarSkinIntervalo = ''
+
 // Função para o personagem andar
 window.addEventListener('keydown', (ev) => {
     let tecla = ev.key
@@ -74,7 +76,7 @@ function trocarSkinAndando(lado) {
     let skinAtual = urlSkinsPersonagem[lado][indiceSkinAtual]
     
     // cria o intervalo para ficar mudando de skin
-    var trocarSkinIntervalo = setInterval(() => {
+    trocarSkinIntervalo = setInterval(() => {
         if (indiceSkinAtual == (urlSkinsPersonagem[lado].length - 1)) {
             indiceSkinAtual = 0
         } else {

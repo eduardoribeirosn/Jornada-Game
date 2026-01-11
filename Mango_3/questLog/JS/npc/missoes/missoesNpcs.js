@@ -13,7 +13,8 @@ export let sagasNpcs = [
                     }
                 ],
                 descricaoObjetivo: 'Colete 20 Moedas para o Misterioso.',
-                msgCompletar: 'Complete com o Misterioso.'
+                msgCompletar: 'Complete com o Misterioso.',
+                npcCompletar: 'Misterioso'
             }
         ]
     }

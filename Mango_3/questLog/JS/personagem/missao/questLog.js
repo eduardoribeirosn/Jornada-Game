@@ -19,7 +19,8 @@ export let questLogPersonagem = [
                     }
                 ],
                 descricaoObjetivo: 'Derrotar o Iruka Disfarçado.',
-                msgCompletar: 'Complete com o Iruka.'
+                msgCompletar: 'Complete com o Iruka.',
+                npcCompletar: 'Iruka'
             }
         ]
     },
@@ -52,7 +53,8 @@ export let questLogPersonagem = [
                     }
                 ],
                 descricaoObjetivo: 'Derrotar o Kakashi e seus clones.',
-                msgCompletar: 'Complete com o Kakashi.'
+                msgCompletar: 'Complete com o Kakashi.',
+                npcCompletar: 'Kakashi'
             },
             {
                 nomeMissao: 'Missão 2',
@@ -69,8 +71,13 @@ export let questLogPersonagem = [
                     }
                 ],
                 descricaoObjetivo: 'Derrotar a Sombra.',
-                msgCompletar: 'Complete com o Naruto.'
+                msgCompletar: 'Complete com o Naruto.',
+                npcCompletar: 'Naruto'
             }
         ]
     },
 ]
+
+export function setNewQuestLogPersonagem(newQuestLogPersonagem) {
+    questLogPersonagem = newQuestLogPersonagem
+}

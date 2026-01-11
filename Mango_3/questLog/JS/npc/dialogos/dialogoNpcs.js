@@ -1,4 +1,4 @@
-export let dialogosNpcMisterioso = [
+export let dialogosNpcs = [
     {
         nomeSaga: 'Saga Misterioso',
         nomeSagaId: 'SagaMisterioso',
