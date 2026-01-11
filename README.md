@@ -93,4 +93,6 @@ Continuação do Mango_2 (Quebrei o Mango_2 em alguns mangos...)
 
 10- Upgrade: Melhorar o sistema, assim que o progresso da missão for concluido, aparecer uma mensagem no questLog falando com qual npc deve ser completada.
 
-11- Criação: Criar um sistema de recompensa para as missões.
+11- Upgrade: Melhorar o sistema, caso a missão seja "coletável", tirar os itens do personagem após a conclusão da missão.
+
+12- Criação: Criar um sistema de recompensa para as missões.

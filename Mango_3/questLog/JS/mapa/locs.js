@@ -16,6 +16,16 @@ export let locsItemsMapa = [
         coletavel: false,
         skin: 'assets/npc/npc_missao_1/misterioso.png',
         npc: true,
+        dialogo: [
+            {
+                saga: 'Saga Misterioso',
+                missao: 'Missão 1 - Coletar Moedas'
+            },
+            {
+                saga: 'Saga Misterioso',
+                missao: 'Recompensa: Missão 1 - Coletar Moedas'
+            }
+        ],
         quests: [
             {
                 saga: 'Saga Misterioso',

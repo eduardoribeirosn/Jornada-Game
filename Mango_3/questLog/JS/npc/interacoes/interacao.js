@@ -54,14 +54,22 @@ export function interagirNpcs(npcAtual) {
     }
 }
 
-function criarDialogo(npcAtual, dialogoAtual) {
+export function criarDialogo(npcAtual, dialogoAtual, dialogosPossiveis = dialogosNpcs) {
     // Identificação do diálogo
+    let missaoAtualDialogo = ''
     let dialogoMissao = ''
-    for (let sagasDialogosNpc of dialogosNpcs) {
-        if (sagasDialogosNpc.nomeSaga == npcAtual.quests[0].saga) {
-            for (let missoesSagasDialogosNpc of sagasDialogosNpc.missoes) {
-                if (missoesSagasDialogosNpc.nomeMissao == npcAtual.quests[0].missao) {
-                    dialogoMissao = missoesSagasDialogosNpc.dialogos
+    let firstDialogo = true
+    for (let i = 0; i < npcAtual.dialogo.length; i++) {
+        if (firstDialogo) {
+            for (let sagasDialogosNpc of dialogosPossiveis) {
+                if (sagasDialogosNpc.nomeSaga == npcAtual.dialogo[i].saga) {
+                    for (let missoesSagasDialogosNpc of sagasDialogosNpc.missoes) {
+                        if (missoesSagasDialogosNpc.nomeMissao == npcAtual.dialogo[i].missao) {
+                            missaoAtualDialogo = missoesSagasDialogosNpc
+                            dialogoMissao = missoesSagasDialogosNpc.dialogos
+                            firstDialogo = false
+                        }
+                    }
                 }
             }
         }
@@ -128,36 +136,71 @@ function criarDialogo(npcAtual, dialogoAtual) {
     
     containerDialogo.style.display = 'block'
     containerDialogo.appendChild(arrayDialogos[dialogoAtual])
-    if (dialogoAtual == (arrayDialogos.length - 1)) {
-
-        function eventoRespostasDialogo(ev) {
-            if (ev.key.toLowerCase() == 'c') {
-                darMissao(npcAtual)
-                containerDialogo.replaceChildren()
-                containerDialogo.style.display = 'none'
-                removeEventListener('keyup', eventoRespostasDialogo)
-            } else if (ev.key.toLowerCase() == 'r') {
-                containerDialogo.replaceChildren()
-                containerDialogo.style.display = 'none'
-                removeEventListener('keyup', eventoRespostasDialogo)
+    if (missaoAtualDialogo.nomeMissao.slice(0, 11) != 'Recompensa') {
+        if (dialogoAtual == (arrayDialogos.length - 1)) {
+    
+            function eventoRespostasDialogo(ev) {
+                if (ev.key.toLowerCase() == 'c') {
+                    darMissao(npcAtual)
+                    containerDialogo.replaceChildren()
+                    containerDialogo.style.display = 'none'
+                    removeEventListener('keyup', eventoRespostasDialogo)
+                } else if (ev.key.toLowerCase() == 'r') {
+                    containerDialogo.replaceChildren()
+                    containerDialogo.style.display = 'none'
+                    removeEventListener('keyup', eventoRespostasDialogo)
+                }
             }
+    
+            addEventListener('keyup', eventoRespostasDialogo)
+        } else {
+    
+            function eventoRespostasDialogo(ev) {
+                if (ev.key.toLowerCase() == 'c') {
+                    containerDialogo.replaceChildren()
+                    criarDialogo(npcAtual, dialogoAtual + 1)
+                    removeEventListener('keyup', eventoRespostasDialogo)
+                } else if (ev.key.toLowerCase() == 'r') {
+                    containerDialogo.replaceChildren()
+                    containerDialogo.style.display = 'none'
+                    removeEventListener('keyup', eventoRespostasDialogo)
+                }
+            }
+            
+            addEventListener('keyup', eventoRespostasDialogo)
         }
-
-        addEventListener('keyup', eventoRespostasDialogo)
     } else {
-
-        function eventoRespostasDialogo(ev) {
-            if (ev.key.toLowerCase() == 'c') {
-                criarDialogo(npcAtual, dialogoAtual + 1)
-                removeEventListener('keyup', eventoRespostasDialogo)
-            } else if (ev.key.toLowerCase() == 'r') {
-                containerDialogo.replaceChildren()
-                containerDialogo.style.display = 'none'
-                removeEventListener('keyup', eventoRespostasDialogo)
+        if (dialogoAtual == (arrayDialogos.length - 1)) {
+    
+            function eventoRespostasDialogo(ev) {
+                if (ev.key.toLowerCase() == 'c') {
+                    containerDialogo.replaceChildren()
+                    containerDialogo.style.display = 'none'
+                    removeEventListener('keyup', eventoRespostasDialogo)
+                } else if (ev.key.toLowerCase() == 'r') {
+                    containerDialogo.replaceChildren()
+                    containerDialogo.style.display = 'none'
+                    removeEventListener('keyup', eventoRespostasDialogo)
+                }
             }
+    
+            addEventListener('keyup', eventoRespostasDialogo)
+        } else {
+    
+            function eventoRespostasDialogo(ev) {
+                if (ev.key.toLowerCase() == 'c') {
+                    containerDialogo.replaceChildren()
+                    criarDialogo(npcAtual, dialogoAtual + 1)
+                    removeEventListener('keyup', eventoRespostasDialogo)
+                } else if (ev.key.toLowerCase() == 'r') {
+                    containerDialogo.replaceChildren()
+                    criarDialogo(npcAtual, dialogoAtual + 1)
+                    removeEventListener('keyup', eventoRespostasDialogo)
+                }
+            }
+            
+            addEventListener('keyup', eventoRespostasDialogo)
         }
-        
-        addEventListener('keyup', eventoRespostasDialogo)
     }
     
 }

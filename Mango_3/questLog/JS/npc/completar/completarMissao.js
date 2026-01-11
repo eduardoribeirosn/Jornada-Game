@@ -1,6 +1,8 @@
 import { attQuestLogInteiro } from "../../../script.js";
+import { attInvPersonagem, invPersonagem, setNewInvPersonagem } from "../../personagem/inventario.js";
 import { missoesFinalizadasPersonagem } from "../../personagem/missao/missoesFinalizadas.js";
 import { questLogPersonagem, setNewQuestLogPersonagem } from "../../personagem/missao/questLog.js";
+import { darRecompensa } from "../missoes/darRecompensa.js";
 
 export function completarMissao(npcAtual) {
     for (let i = 0; i < questLogPersonagem.length; i++) {
@@ -22,6 +24,31 @@ export function completarMissao(npcAtual) {
             if (objetivosCompletados) {
                 if (questLogPersonagem[i].missoes[j].npcCompletar == npcAtual.nome.slice(4)) {
                     console.log('Missão completada')
+                    // Tirar os itens caso a missão for do tipo "coletável"
+                    for (let objetivoMissao of questLogPersonagem[i].missoes[j].objetivo) {
+                        if (objetivoMissao.typeMission == 'coletável') {
+                            for (let itemInvPersonagem of invPersonagem) {
+                                if (itemInvPersonagem.nomeItem == objetivoMissao.objective) {
+                                    if (itemInvPersonagem.quantidade == objetivoMissao.quantityMission) {
+                                        // Excluir o Item do Inventário
+                                        let arrayInvPersonagemAuxiliar = []
+                                        for (let itemInvPersonagemAuxiliar of invPersonagem) {
+                                            if (itemInvPersonagemAuxiliar != itemInvPersonagem) {
+                                                arrayInvPersonagemAuxiliar.push(itemInvPersonagemAuxiliar)
+                                            }
+                                        }
+                                        setNewInvPersonagem(arrayInvPersonagemAuxiliar)
+                                        attInvPersonagem()
+                                    } else {
+                                        // Tirar a quantidade da missão
+                                        itemInvPersonagem.quantidade -= objetivoMissao.quantityMission
+                                        attInvPersonagem()
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    darRecompensa(npcAtual, questLogPersonagem[i].missoes[j])
                     finalizarMissao(questLogPersonagem[i], questLogPersonagem[i].missoes[j])
                     return true
                 }
@@ -29,8 +56,6 @@ export function completarMissao(npcAtual) {
         }
     }
 }
-
-// Recompensa da Missão FAZER DPSSSSSSSS
 
 // Finalizar Missão (tirar do questLog e passar pro finalizadas)
 function finalizarMissao(sagaMissaoFinalizada, missaoFinalizada) {
