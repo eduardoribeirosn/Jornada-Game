@@ -7,9 +7,9 @@ export let sagasNpcs = [
                 nomeMissao: 'Missão 1 - Coletar Moedas',
                 objetivo: [
                     {
-                        objective: 'Moedas de Ouro',
-                        typeMission: 'Coletável',
-                        quantityMission: 20
+                        objective: 'Moeda de Ouro',
+                        typeMission: 'coletável',
+                        quantityMission: 5
                     }
                 ],
                 descricaoObjetivo: 'Colete 20 Moedas para o Misterioso.',

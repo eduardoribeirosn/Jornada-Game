@@ -1,4 +1,4 @@
-import { attQuestLog } from "../../../script.js";
+import { attQuestLogInteiro } from "../../../script.js";
 import { missoesFinalizadasPersonagem } from "../../personagem/missao/missoesFinalizadas.js";
 import { questLogPersonagem, setNewQuestLogPersonagem } from "../../personagem/missao/questLog.js";
 
@@ -22,9 +22,7 @@ export function completarMissao(npcAtual) {
             if (objetivosCompletados) {
                 if (questLogPersonagem[i].missoes[j].npcCompletar == npcAtual.nome.slice(4)) {
                     console.log('Missão completada')
-                    console.log(missoesFinalizadasPersonagem)
                     finalizarMissao(questLogPersonagem[i], questLogPersonagem[i].missoes[j])
-                    console.log(missoesFinalizadasPersonagem)
                     return true
                 }
             }
@@ -60,7 +58,7 @@ function finalizarMissao(sagaMissaoFinalizada, missaoFinalizada) {
     // Atualiza o objeto QuestLog
     setNewQuestLogPersonagem(newQuestLog)
     // Atualiza a tela QuestLog
-    attQuestLog()
+    attQuestLogInteiro()
 
     // Passar pro objeto missoesFinalizadas
     let sagaExistenteAuxiliar = false

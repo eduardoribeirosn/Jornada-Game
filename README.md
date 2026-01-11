@@ -88,3 +88,9 @@ Continuação do Mango_2 (Quebrei o Mango_2 em alguns mangos...)
 7- Criação: Criar um sistema que passa a missão do NPC para o questLog do Personagem.
 
 8- Upgrade: Melhorar o sistema, assim que o personagem completar a missão com o npc, tirar ela do questLog e passar ela pro histórico de missões finalizadas.
+
+9- Upgrade: Melhorar o sistema, atualizar a missão sempre que houver progresso nela.
+
+10- Upgrade: Melhorar o sistema, assim que o progresso da missão for concluido, aparecer uma mensagem no questLog falando com qual npc deve ser completada.
+
+11- Criação: Criar um sistema de recompensa para as missões.

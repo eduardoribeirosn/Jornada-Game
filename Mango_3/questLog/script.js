@@ -1,6 +1,7 @@
 import { interagirAll } from "./JS/interacao/interagir.js"
 import { locsItemsMapa} from "./JS/mapa/locs.js"
 import { invPersonagem } from "./JS/personagem/inventario.js"
+import { attProtocoloQuestLog } from "./JS/personagem/missao/attProtocoQuestLog.js"
 import { questLogPersonagem } from "./JS/personagem/missao/questLog.js"
 import { urlSkinsPersonagem } from "./JS/personagem/skin.js"
 
@@ -206,6 +207,9 @@ function passarPorItem() {
                         }
                     )
                 }
+                
+                // Atualiza o questLog da Missão
+                attProtocoloQuestLog()
             }
 
             
@@ -434,16 +438,49 @@ function montarQuestLogMissaoSelecionada(missaoAtual) {
 
     tagContainerQuestAtual.querySelector('.questAtualConteudo').querySelector('.descricaoObjetivo').appendChild(descricaoObjetivoMissao)
 
-    // Cria o conteúdo da missão - msgCompletar
-    let msgCompletarMissao = document.createElement('span')
-    msgCompletarMissao.textContent = missaoAtual.msgCompletar
+    // Verificando se a missão foi completada
+    let arrayObjetivosAuxiliar = []
+    for (let objetivoMissaoAtual of missaoAtual.objetivo) {
+        arrayObjetivosAuxiliar.push(objetivoMissaoAtual.completed)
+    }
+    let verificacaoObjetivosAuxiliar = true
+    for (let i = 0; i < arrayObjetivosAuxiliar.length; i++) {
+        if (!arrayObjetivosAuxiliar[i]) {
+            verificacaoObjetivosAuxiliar = false
+        }
+    }
 
-    tagContainerQuestAtual.querySelector('.questAtualConteudo').querySelector('.msgCompletar').appendChild(msgCompletarMissao)
+    if (verificacaoObjetivosAuxiliar) {
+        // Cria o conteúdo da missão - msgCompletar
+        let msgCompletarMissao = document.createElement('span')
+        msgCompletarMissao.textContent = missaoAtual.msgCompletar
+        msgCompletarMissao.style.fontWeight = 'bold'
+    
+        tagContainerQuestAtual.querySelector('.questAtualConteudo').querySelector('.msgCompletar').appendChild(msgCompletarMissao)
+    }
+
 }
 
-// Função para atualizar o questLog
-export function attQuestLog() {
+// Função para atualizar o questLog Inteiro
+export function attQuestLogInteiro() {
     montarQuestLogSagas()
+}
+
+// Função para atualizar o questLog Missão Atual
+export function attQuestLogMissaoAtual() {
+    let sagaSelecionada = document.querySelector('.sagaSelecionada')
+    let missaoSelecionada = document.querySelector('.questSelecionada')
+
+    for (let sagaQuestLog of questLogPersonagem) {
+        if (sagaQuestLog.nomeSaga == sagaSelecionada.textContent) {
+            for (let missaoSagaQuestLog of sagaQuestLog.missoes) {
+                if (missaoSagaQuestLog.nomeMissao == missaoSelecionada.textContent) {
+                    montarQuestLogMissaoSelecionada(missaoSagaQuestLog)
+                    montarQuestLogMissaoSelecionada(missaoSagaQuestLog)
+                }
+            }
+        }
+    }
 }
 
 gerarItemsAleatorias('Moeda de Ouro', 'moedaOuro', 10, './assets/objetos/moedaOuro.png')

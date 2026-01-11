@@ -1,4 +1,4 @@
-import { attQuestLog } from "../../../script.js";
+import { attQuestLogInteiro } from "../../../script.js";
 import { questLogPersonagem } from "../../personagem/missao/questLog.js";
 import { sagasNpcs } from "./missoesNpcs.js";
 
@@ -32,5 +32,5 @@ export function darMissao(npcAtual) {
     }
     // console.log(missaoAtualTotal)
     questLogPersonagem.push(missaoAtualTotal)
-    attQuestLog()
+    attQuestLogInteiro()
 }
