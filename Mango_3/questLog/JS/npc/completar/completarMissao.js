@@ -1,5 +1,5 @@
 import { attQuestLogInteiro } from "../../../script.js";
-import { attInvPersonagem, invPersonagem, setNewInvPersonagem } from "../../personagem/inventario.js";
+import { attTelaInvPersonagem, invPersonagem, setNewInvPersonagem } from "../../personagem/inventario.js";
 import { missoesFinalizadasPersonagem } from "../../personagem/missao/missoesFinalizadas.js";
 import { questLogPersonagem, setNewQuestLogPersonagem } from "../../personagem/missao/questLog.js";
 import { darRecompensa } from "../missoes/darRecompensa.js";
@@ -38,11 +38,11 @@ export function completarMissao(npcAtual) {
                                             }
                                         }
                                         setNewInvPersonagem(arrayInvPersonagemAuxiliar)
-                                        attInvPersonagem()
+                                        attTelaInvPersonagem()
                                     } else {
                                         // Tirar a quantidade da missão
                                         itemInvPersonagem.quantidade -= objetivoMissao.quantityMission
-                                        attInvPersonagem()
+                                        attTelaInvPersonagem()
                                     }
                                 }
                             }

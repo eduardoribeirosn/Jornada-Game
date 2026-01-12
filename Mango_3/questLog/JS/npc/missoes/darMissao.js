@@ -31,8 +31,13 @@ export function darMissao(npcAtual) {
         nomeSagaId: copiaSagaAtual[1],
         missoes: [copiaMissaoAtual]
     }
-    // console.log(missaoAtualTotal)
     questLogPersonagem.push(missaoAtualTotal)
+    
+    // Ativar os especiais da missão
+    for (let itemSpecial of copiaMissaoAtual.special) {
+        itemSpecial()
+    }
+    
     attQuestLogInteiro()
     attProtocoloQuestLog()
 }

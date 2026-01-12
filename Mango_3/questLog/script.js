@@ -99,7 +99,7 @@ function trocarSkinAndando(lado) {
 }
 
 // Função para aparecer items aleatórias no mapa
-function gerarItemsAleatorias(nameItem, classNameItem, quantidade, skinItem) {
+export function gerarItemsAleatorias(nameItem, classNameItem, quantidade, skinItem) {
     let items = []
     for (let i = 0; i < quantidade; i++) {
         let item = document.createElement('span')

@@ -6,11 +6,24 @@ export let invPersonagem = [
     // }
 ]
 
+export function darItem(item) {
+    for (let itemInvPersonagem of invPersonagem) {
+        if (itemInvPersonagem.nomeItem == item.nomeItem) {
+            itemInvPersonagem.quantidade += item.quantidade
+            attTelaInvPersonagem()
+            return
+        }
+    }
+    
+    invPersonagem.push(item)
+    attTelaInvPersonagem()
+}
+
 export function setNewInvPersonagem(newInvPersonagem) {
     invPersonagem = newInvPersonagem
 }
 
-export function attInvPersonagem() {
+export function attTelaInvPersonagem() {
     // Zerar o inventário
     for (let i = 1; i <= 30; i++) {
         document.getElementById(`idTdInventario${i}`).replaceChildren()

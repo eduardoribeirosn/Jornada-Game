@@ -1,3 +1,5 @@
+import { gerarItemsAleatorias } from "../../../script.js";
+
 export let sagasNpcs = [
     {
         nomeSaga: 'Saga Misterioso',
@@ -9,10 +11,11 @@ export let sagasNpcs = [
                     {
                         objective: 'Moeda de Ouro',
                         typeMission: 'coletável',
-                        quantityMission: 5
+                        quantityMission: 20
                     }
                 ],
                 recompensa: [
+                    // Exemplo de Recompensa de Diálogo
                     {
                         nameReward: 'Dica do começo do Tutorial.',
                         quantityReward: 1,
@@ -40,11 +43,27 @@ export let sagasNpcs = [
                                 ]
                             }
                         ]
+                    },
+                    // Exemplo de Recompensa de Item
+                    {
+                        nameReward: '#2 - Dica do começo do Tutorial.',
+                        quantityReward: 1,
+                        typeReward: 'item',
+                        reward: [
+                            {
+                                nomeItem: 'Moeda de Ouro',
+                                quantidade: 2,
+                                skin: './assets/objetos/moedaOuro.png'
+                            }
+                        ]
                     }
                 ],
                 descricaoObjetivo: 'Colete 20 Moedas para o Misterioso.',
                 msgCompletar: 'Complete com o Misterioso.',
-                npcCompletar: 'Misterioso'
+                npcCompletar: 'Misterioso',
+                special: [
+                    () => gerarItemsAleatorias('Moeda de Ouro', 'moedaOuro', 20, './assets/objetos/moedaOuro.png')
+                ]
             }
         ]
     }

@@ -95,4 +95,4 @@ Continuação do Mango_2 (Quebrei o Mango_2 em alguns mangos...)
 
 11- Upgrade: Melhorar o sistema, caso a missão seja "coletável", tirar os itens do personagem após a conclusão da missão.
 
-12- Criação: Criar um sistema de recompensa para as missões.
+12- Criação: Criar um sistema de recompensa para as missões (Recompensa de diálogo e/ou item).

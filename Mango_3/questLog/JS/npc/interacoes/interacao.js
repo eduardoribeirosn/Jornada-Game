@@ -136,7 +136,8 @@ export function criarDialogo(npcAtual, dialogoAtual, dialogosPossiveis = dialogo
     
     containerDialogo.style.display = 'block'
     containerDialogo.appendChild(arrayDialogos[dialogoAtual])
-    if (missaoAtualDialogo.nomeMissao.slice(0, 11) != 'Recompensa') {
+    console.log(dialogosPossiveis)
+    if (missaoAtualDialogo.nomeMissao.slice(0, 11) != 'Recompensa:') {
         if (dialogoAtual == (arrayDialogos.length - 1)) {
     
             function eventoRespostasDialogo(ev) {
