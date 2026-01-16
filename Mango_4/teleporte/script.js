@@ -1,5 +1,5 @@
 import { interagirAll } from "./JS/interacao/interagir.js"
-import { locsItemsMapa} from "./JS/mapa/locs.js"
+import { localizarMapa } from "./JS/mapa/localizarMapa.js"
 import { invPersonagem } from "./JS/personagem/inventario.js"
 import { attProtocoloQuestLog } from "./JS/personagem/missao/attProtocoQuestLog.js"
 import { questLogPersonagem } from "./JS/personagem/missao/questLog.js"
@@ -12,6 +12,8 @@ var trocarSkinIntervalo = ''
 
 // Função para o personagem andar
 window.addEventListener('keydown', (ev) => {
+    let infoLocsItemsMapa = localizarMapa()
+
     let tecla = ev.key
     let vertical = Number(document.documentElement.style.getPropertyValue('--posYPersonagem'))
     let horizontal = Number(document.documentElement.style.getPropertyValue('--posXPersonagem'))
@@ -23,7 +25,7 @@ window.addEventListener('keydown', (ev) => {
         
         if (vertical > 1 && possoAndarProximaLoc(horizontal, (vertical - 1))) { // Limita o personagem a não sair do mapa, limita o personagem a não passar por blocos sólidos.
             document.documentElement.style.setProperty('--posYPersonagem', (vertical - 1))
-            locsItemsMapa[0].y = vertical - 1
+            infoLocsItemsMapa[0].y = vertical - 1
         }
         
     } else if (tecla == 'ArrowDown' || tecla.toLowerCase() == 's') {
@@ -33,7 +35,7 @@ window.addEventListener('keydown', (ev) => {
         
         if (vertical < 29 && possoAndarProximaLoc(horizontal, (vertical + 1))) { // Limita o personagem a não sair do mapa, limita o personagem a não passar por blocos sólidos.
             document.documentElement.style.setProperty('--posYPersonagem', (vertical + 1))
-            locsItemsMapa[0].y = vertical + 1
+            infoLocsItemsMapa[0].y = vertical + 1
         }
     } else if (tecla == 'ArrowLeft' || tecla.toLowerCase() == 'a') {
         ev.preventDefault()
@@ -42,7 +44,7 @@ window.addEventListener('keydown', (ev) => {
         
         if (horizontal > 1 && possoAndarProximaLoc((horizontal - 1), vertical)) { // Limita o personagem a não sair do mapa, limita o personagem a não passar por blocos sólidos.
             document.documentElement.style.setProperty('--posXPersonagem', (horizontal - 1))
-            locsItemsMapa[0].x = horizontal - 1
+            infoLocsItemsMapa[0].x = horizontal - 1
         }
     } else if (tecla == 'ArrowRight' || tecla.toLowerCase() == 'd') {
         ev.preventDefault()
@@ -51,7 +53,7 @@ window.addEventListener('keydown', (ev) => {
         
         if (horizontal < 50 && possoAndarProximaLoc((horizontal + 1), vertical)) { // Limita o personagem a não sair do mapa, limita o personagem a não passar por blocos sólidos.
             document.documentElement.style.setProperty('--posXPersonagem', (horizontal + 1))
-            locsItemsMapa[0].x = horizontal + 1
+            infoLocsItemsMapa[0].x = horizontal + 1
         }
     } else if (tecla.toLowerCase() == 'p') { // Atualiz a página, então reinicia o jogo
         window.location.reload()
@@ -59,8 +61,8 @@ window.addEventListener('keydown', (ev) => {
         interagirAll()
     }
     passarPorItem()
-    // console.log(locsItemsMapa[0].x)
-    // console.log(locsItemsMapa[0].y)
+    // console.log(infoLocsItemsMapa[0].x)
+    // console.log(infoLocsItemsMapa[0].y)
 })
 
 // Função para o personagem se movimentar quando andar
@@ -100,6 +102,8 @@ function trocarSkinAndando(lado) {
 
 // Função para aparecer items aleatórias no mapa
 export function gerarItemsAleatorias(nameItem, classNameItem, quantidade, skinItem) {
+    let infoLocsItemsMapa = localizarMapa()
+    
     let items = []
     for (let i = 0; i < quantidade; i++) {
         let item = document.createElement('span')
@@ -117,7 +121,7 @@ export function gerarItemsAleatorias(nameItem, classNameItem, quantidade, skinIt
             horizontal = Math.trunc(Math.random() * 49 + 1)
 
             // Verifica no Array de todos os items do Mapa
-            for (let item of locsItemsMapa) {
+            for (let item of infoLocsItemsMapa) {
                 if (item.x == horizontal && item.y == vertical) {
                     repetir = true
                 }
@@ -154,46 +158,48 @@ export function gerarItemsAleatorias(nameItem, classNameItem, quantidade, skinIt
     let mapa = document.getElementById('idMapa')
     for (let i = 0; i < items.length; i++) {
         mapa.appendChild(items[i][0])
-        locsItemsMapa.push(items[i][1])
+        infoLocsItemsMapa.push(items[i][1])
     }
-    console.log(locsItemsMapa)
+    console.log(infoLocsItemsMapa)
 }
 
 // Função para ganhar pontos assim que passar por uma moeda
 function passarPorItem() {
-    for (let i = 1; i < locsItemsMapa.length; i++) {
+    let infoLocsItemsMapa = localizarMapa()
+    
+    for (let i = 1; i < infoLocsItemsMapa.length; i++) {
         // Verifica se passou por algum item no mapa e se é coletável
-        if (locsItemsMapa[0].x == locsItemsMapa[i].x && (locsItemsMapa[0].y + 1) == locsItemsMapa[i].y && locsItemsMapa[i].coletavel) {
+        if (infoLocsItemsMapa[0].x == infoLocsItemsMapa[i].x && (infoLocsItemsMapa[0].y + 1) == infoLocsItemsMapa[i].y && infoLocsItemsMapa[i].coletavel) {
             // Verifica se o item da Ponto
-            if (locsItemsMapa[i].nome == 'Moeda de Ouro') {
+            if (infoLocsItemsMapa[i].nome == 'Moeda de Ouro') {
                 pontos += 5
                 document.getElementById('idValorPontos').textContent = pontos
-            } else if (locsItemsMapa[i].nome == 'Bau') {
+            } else if (infoLocsItemsMapa[i].nome == 'Bau') {
                 pontos += 25
                 document.getElementById('idValorPontos').textContent = pontos
 
             }
 
             // Verifica se é coletável e coleta
-            if (locsItemsMapa[i].coletavel) {
+            if (infoLocsItemsMapa[i].coletavel) {
                 let quantity = 0
                 for (let j = 0; j < invPersonagem.length; j++) {
-                    if (invPersonagem[j].nomeItem == locsItemsMapa[i].nome) {
+                    if (invPersonagem[j].nomeItem == infoLocsItemsMapa[i].nome) {
                         quantity++
                     }
                 }
                 if (quantity > 0) {
-                    let itemColetado = invPersonagem.find(item => item.nomeItem == locsItemsMapa[i].nome)
+                    let itemColetado = invPersonagem.find(item => item.nomeItem == infoLocsItemsMapa[i].nome)
                     itemColetado.quantidade += 1
-                    let indiceItemColetado = (invPersonagem.findIndex(item => item.nomeItem == locsItemsMapa[i].nome) + 1)
+                    let indiceItemColetado = (invPersonagem.findIndex(item => item.nomeItem == infoLocsItemsMapa[i].nome) + 1)
                     console.log(indiceItemColetado)
                     document.getElementById(`idTdInventarioSpan${indiceItemColetado}`).textContent = itemColetado.quantidade
                 } else {
                     let newItemColetadoImg = document.createElement('img')
                     let newItemColetadoSpan = document.createElement('span')
 
-                    newItemColetadoImg.src = `${locsItemsMapa[i].skin}`
-                    newItemColetadoImg.alt = `${locsItemsMapa[i].nome}`
+                    newItemColetadoImg.src = `${infoLocsItemsMapa[i].skin}`
+                    newItemColetadoImg.alt = `${infoLocsItemsMapa[i].nome}`
                     newItemColetadoSpan.textContent = 1
                     newItemColetadoSpan.id = `idTdInventarioSpan${invPersonagem.length + 1}`
 
@@ -201,9 +207,9 @@ function passarPorItem() {
 
                     invPersonagem.push(
                         {
-                            nomeItem: `${locsItemsMapa[i].nome}`,
+                            nomeItem: `${infoLocsItemsMapa[i].nome}`,
                             quantidade: 1,
-                            skin: `${locsItemsMapa[i].skin}`
+                            skin: `${infoLocsItemsMapa[i].skin}`
                         }
                     )
                 }
@@ -217,16 +223,16 @@ function passarPorItem() {
             let listaItems = document.getElementById('idMapa').getElementsByTagName('span')
             for (var j = 0; j < listaItems.length; j++) {
                 // Verifica se é removivel
-                if (listaItems[j].style.gridColumn == locsItemsMapa[i].x && listaItems[j].style.gridRow == locsItemsMapa[i].y && locsItemsMapa[i].coletavel) {
+                if (listaItems[j].style.gridColumn == infoLocsItemsMapa[i].x && listaItems[j].style.gridRow == infoLocsItemsMapa[i].y && infoLocsItemsMapa[i].coletavel) {
                     // Remove o Item da Tela
                     listaItems[j].remove()
 
                     // Remove o Item do Array de items
-                    locsItemsMapa.splice(i, 1)
+                    infoLocsItemsMapa.splice(i, 1)
                 }
             }
-            // if (locsItemsMapa.length == 1 && tempo > 0) { // Aqui funcionava antes do Sistema de Solid, que sobrava apenas o personagem no mapa.
-            // if ((locsItemsMapa.filter(item => item.solid == false)).length == 1 && tempo > 0) {
+            // if (infoLocsItemsMapa.length == 1 && tempo > 0) { // Aqui funcionava antes do Sistema de Solid, que sobrava apenas o personagem no mapa.
+            // if ((infoLocsItemsMapa.filter(item => item.solid == false)).length == 1 && tempo > 0) {
             //     clearInterval(intervaloTempo)
             //     alert(`Você venceu! Sobrou ${tempo} segundos.`)
             //     alert("Clique 'p' para reiniciar o jogo.")
@@ -247,13 +253,15 @@ function passarPorItem() {
 
 // Função para saber se tem item no lugar que você irá andar
 function possoAndarProximaLoc(x, y) {
-    for (let i = 1; i < locsItemsMapa.length; i++) { // Começando o contador em 1, ele não pega o personagem
-        if (locsItemsMapa[i].x == x && locsItemsMapa[i].y == (y + 1)) {
-            var proximoLocal = locsItemsMapa[i]
+    let infoLocsItemsMapa = localizarMapa()
+    
+    for (let i = 1; i < infoLocsItemsMapa.length; i++) { // Começando o contador em 1, ele não pega o personagem
+        if (infoLocsItemsMapa[i].x == x && infoLocsItemsMapa[i].y == (y + 1)) {
+            var proximoLocal = infoLocsItemsMapa[i]
             break
         }
     }
-    // let proximoLocal = locsItemsMapa.find(item => item.x == x && item.y == (y + 1))
+    // let proximoLocal = infoLocsItemsMapa.find(item => item.x == x && item.y == (y + 1))
     if (proximoLocal) {
         if (proximoLocal.solid) {
             return false

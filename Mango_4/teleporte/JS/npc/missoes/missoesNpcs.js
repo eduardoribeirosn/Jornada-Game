@@ -11,7 +11,7 @@ export let sagasNpcs = [
                     {
                         objective: 'Moeda de Ouro',
                         typeMission: 'coletável',
-                        quantityMission: 20
+                        quantityMission: 5
                     }
                 ],
                 recompensa: [

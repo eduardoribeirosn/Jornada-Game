@@ -138,7 +138,7 @@ h1 {
     width: 800px;
     height: 480px;
     display: grid;
-    grid-template: repeat(30, 16px) / repeat(50, 16px);
+    /* grid-template: repeat(30, 16px) / repeat(50, 16px); */
     background-image: url(./assets/cenario/firstGrama.png);
     image-rendering: pixelated;
 }

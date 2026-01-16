@@ -1,44 +1,46 @@
-import { locsItemsMapa } from "../mapa/locs.js"
+import { localizarMapa } from "../mapa/localizarMapa.js"
 import { interagirNpcs } from "../npc/interacoes/interacao.js"
 import { urlSkinsPersonagem } from "../personagem/skin.js"
 
 export function interagirAll() {
+    let infoLocsItemsMapa = localizarMapa()
+    
     let ladoInteracao = descobrirLado()
 
-    let posXPersonagemInteracao = locsItemsMapa[0].x
-    let posYPersonagemInteracao = locsItemsMapa[0].y
+    let posXPersonagemInteracao = infoLocsItemsMapa[0].x
+    let posYPersonagemInteracao = infoLocsItemsMapa[0].y
 
     // Caso esteja olhando para frente/cima
     if (ladoInteracao == 'frente') {
-        for (let i = 1; i < locsItemsMapa.length; i++) {
+        for (let i = 1; i < infoLocsItemsMapa.length; i++) {
             // Verificar se há uma interação com NPC
-            if (posXPersonagemInteracao == locsItemsMapa[i].x && posYPersonagemInteracao == locsItemsMapa[i].y && locsItemsMapa[i].npc) {
+            if (posXPersonagemInteracao == infoLocsItemsMapa[i].x && posYPersonagemInteracao == infoLocsItemsMapa[i].y && infoLocsItemsMapa[i].npc) {
                 console.log('É um NPC')
-                interagirNpcs(locsItemsMapa[i])
+                interagirNpcs(infoLocsItemsMapa[i])
             } 
         }
     } else if (ladoInteracao == 'esquerda') {
-        for (let i = 1; i < locsItemsMapa.length; i++) {
+        for (let i = 1; i < infoLocsItemsMapa.length; i++) {
             // Verificar se há uma interação com NPC
-            if (posXPersonagemInteracao == (locsItemsMapa[i].x + 1) && posYPersonagemInteracao == (locsItemsMapa[i].y - 1) && locsItemsMapa[i].npc) {
+            if (posXPersonagemInteracao == (infoLocsItemsMapa[i].x + 1) && posYPersonagemInteracao == (infoLocsItemsMapa[i].y - 1) && infoLocsItemsMapa[i].npc) {
                 console.log('É um NPC')
-                interagirNpcs(locsItemsMapa[i])
+                interagirNpcs(infoLocsItemsMapa[i])
             } 
         }
     } else if (ladoInteracao == 'direita') {
-        for (let i = 1; i < locsItemsMapa.length; i++) {
+        for (let i = 1; i < infoLocsItemsMapa.length; i++) {
             // Verificar se há uma interação com NPC
-            if (posXPersonagemInteracao == (locsItemsMapa[i].x - 1) && posYPersonagemInteracao == (locsItemsMapa[i].y - 1) && locsItemsMapa[i].npc) {
+            if (posXPersonagemInteracao == (infoLocsItemsMapa[i].x - 1) && posYPersonagemInteracao == (infoLocsItemsMapa[i].y - 1) && infoLocsItemsMapa[i].npc) {
                 console.log('É um NPC')
-                interagirNpcs(locsItemsMapa[i])
+                interagirNpcs(infoLocsItemsMapa[i])
             } 
         }
     } else if (ladoInteracao == 'tras') {
-        for (let i = 1; i < locsItemsMapa.length; i++) {
+        for (let i = 1; i < infoLocsItemsMapa.length; i++) {
             // Verificar se há uma interação com NPC
-            if (posXPersonagemInteracao == locsItemsMapa[i].x && posYPersonagemInteracao == (locsItemsMapa[i].y - 2) && locsItemsMapa[i].npc) {
+            if (posXPersonagemInteracao == infoLocsItemsMapa[i].x && posYPersonagemInteracao == (infoLocsItemsMapa[i].y - 2) && infoLocsItemsMapa[i].npc) {
                 console.log('É um NPC')
-                interagirNpcs(locsItemsMapa[i])
+                interagirNpcs(infoLocsItemsMapa[i])
             } 
         }
     }

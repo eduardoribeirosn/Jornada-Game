@@ -1,3 +1,4 @@
+import { teleportarPersonagem } from "../../mapa/teleporte.js"
 import { darItem } from "../../personagem/inventario.js"
 import { criarDialogo } from "../interacoes/interacao.js"
 
@@ -17,4 +18,6 @@ export function darRecompensa(npcMissao, missaoConcluida) {
         }
     }
 
+    // Test
+    teleportarPersonagem('idMapaCasa1', 14, 10)
 }
