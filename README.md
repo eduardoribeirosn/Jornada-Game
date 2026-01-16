@@ -58,7 +58,6 @@ Após uma conversa com a IA Gemini, tive algumas ideias para criar. (Continuaç�
 3- Criação: Criar um sistema para separar itens coletaveis de itens não coletaveis como decoração, por exemplo uma flor no chão. (adicionei um novo campo "coletavel" no Objeto [locsItemsMapa]).
 
 ### Mango 3
-Continuação do Mango_2 (Quebrei o Mango_2 em alguns mangos...)
 
 {
     
@@ -67,10 +66,6 @@ Continuação do Mango_2 (Quebrei o Mango_2 em alguns mangos...)
     - Criar um espaço para ver as missões no lado direito da Tela (Quest Log).
     
     - Criar Npcs com missões, (pegar tantas Moedas, ir para tal local...)
-
-    - Fazer teleportes para outros local.
-
-    - Pesquisar sobre fundos para dar sensações de tempos/temperaturas/horas diferentes.
 }
 
 1- Criação: Procurar uma skin para o primeiro NPC de missão.
@@ -96,3 +91,19 @@ Continuação do Mango_2 (Quebrei o Mango_2 em alguns mangos...)
 11- Upgrade: Melhorar o sistema, caso a missão seja "coletável", tirar os itens do personagem após a conclusão da missão.
 
 12- Criação: Criar um sistema de recompensa para as missões (Recompensa de diálogo e/ou item).
+
+### Mango 4
+
+{
+
+    #### Coisas a Fazer no Mango_4
+
+    - Melhorar o mapa com decorações e construções.
+
+    - Fazer teleportes para outros locais.
+
+    - Pesquisar sobre fundos para dar sensações de tempos/temperaturas/horas diferentes.
+
+}
+
+1- Criação: Criar designs e implementar no mapa.

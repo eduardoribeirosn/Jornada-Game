@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en" style="--posYPersonagem: 1; --imagePersonagem: url(./assets/personagem/tras/little-man-1-32px_tras_1.png); --posXPersonagem: 1;">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teleporte - ZduardoxX</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>Teleporte</h1>
+    <hr>
+    
+    <main class="spaceGame">
+        <div class="top">
+            <div class="left"></div>
+            <div class="placar">
+                <div class="pontos">
+                    <span>Pontos</span>
+                    <span id="idValorPontos">0</span>
+                </div>
+                <div class="tempo">
+                    <span>Tempo</span>
+                    <span id="idValorTempo">30</span>
+                </div>
+            </div>
+            <div class="right"></div>
+        </div>
+
+        <div class="mid">
+            <section class="left">
+                <div class="inventario">
+                    <span class="miniTitleInventario">Inventário</span>
+                    <table>
+                        <tr>
+                            <td id="idTdInventario1"></td>
+                            <td id="idTdInventario2"></td>
+                            <td id="idTdInventario3"></td>
+                            <td id="idTdInventario4"></td>
+                            <td id="idTdInventario5"></td>
+                            <td id="idTdInventario6"></td>
+                        </tr>
+                        <tr>
+                            <td id="idTdInventario7"></td>
+                            <td id="idTdInventario8"></td>
+                            <td id="idTdInventario9"></td>
+                            <td id="idTdInventario10"></td>
+                            <td id="idTdInventario11"></td>
+                            <td id="idTdInventario12"></td>
+                        </tr>
+                        <tr>
+                            <td id="idTdInventario13"></td>
+                            <td id="idTdInventario14"></td>
+                            <td id="idTdInventario15"></td>
+                            <td id="idTdInventario16"></td>
+                            <td id="idTdInventario17"></td>
+                            <td id="idTdInventario18"></td>
+                        </tr>
+                        <tr>
+                            <td id="idTdInventario19"></td>
+                            <td id="idTdInventario20"></td>
+                            <td id="idTdInventario21"></td>
+                            <td id="idTdInventario22"></td>
+                            <td id="idTdInventario23"></td>
+                            <td id="idTdInventario24"></td>
+                        </tr>
+                        <tr>
+                            <td id="idTdInventario25"></td>
+                            <td id="idTdInventario26"></td>
+                            <td id="idTdInventario27"></td>
+                            <td id="idTdInventario28"></td>
+                            <td id="idTdInventario29"></td>
+                            <td id="idTdInventario30"></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <section id="idMapaTotal">
+                <section id="idMapa" class="blocks">
+                    <div id="idPersonagem" class="personagem"></div>
+                    <!-- Casa1 - Tutorial -->
+                    <span id="idCasa1Porta" class="casa1Porta" style="grid-column: 15; grid-row: 16;"></span>
+                    <span id="idCasa1Item1" class="casa1Item1" style="grid-column: 14; grid-row: 17;"></span>
+                    <span id="idCasa1Item2" class="casa1Item2" style="grid-column: 16; grid-row: 17;"></span>
+                    <span id="idCasa1Item3" class="casa1Item3" style="grid-column: 14; grid-row: 16;"></span>
+                    <span id="idCasa1Item4" class="casa1Item4" style="grid-column: 16; grid-row: 16;"></span>
+                    <span id="idCasa1Item5" class="casa1Item5" style="grid-column: 14; grid-row: 15;"></span>
+                    <span id="idCasa1Item6" class="casa1Item6" style="grid-column: 15; grid-row: 15;"></span>
+                    <span id="idCasa1Item7" class="casa1Item7" style="grid-column: 16; grid-row: 15;"></span>
+                    <span id="idCasa1Item8" class="casa1Item8" style="grid-column: 14; grid-row: 14;"></span>
+                    <span id="idCasa1Item9" class="casa1Item9" style="grid-column: 15; grid-row: 14;"></span>
+                    <span id="idCasa1Item10" class="casa1Item10" style="grid-column: 16; grid-row: 14;"></span>
+                    <!--  -->
+                    <!-- Mar1 -->
+                    <!-- Top -->
+                    <span id="idMar1Item1" class="marTopLeft" style="grid-column: 29; grid-row: 10;"></span>
+                    <span id="idMar1Item2" class="marTop" style="grid-column: 30; grid-row: 10;"></span>
+                    <span id="idMar1Item3" class="marTop" style="grid-column: 31; grid-row: 10;"></span>
+                    <span id="idMar1Item4" class="marTop" style="grid-column: 32; grid-row: 10;"></span>
+                    <span id="idMar1Item5" class="marTop" style="grid-column: 33; grid-row: 10;"></span>
+                    <span id="idMar1Item6" class="marTop" style="grid-column: 34; grid-row: 10;"></span>
+                    <span id="idMar1Item7" class="marTop" style="grid-column: 35; grid-row: 10;"></span>
+                    <span id="idMar1Item8" class="marTop" style="grid-column: 36; grid-row: 10;"></span>
+                    <span id="idMar1Item9" class="marTop" style="grid-column: 37; grid-row: 10;"></span>
+                    <span id="idMar1Item10" class="marTopRight" style="grid-column: 38; grid-row: 10;"></span>
+                    <!-- fim Top -->
+                    <!-- Mid 1 -->
+                    <span id="idMar1Item11" class="marLeft" style="grid-column: 29; grid-row: 11;"></span>
+                    <span id="idMar1Item12" class="marMid" style="grid-column: 30; grid-row: 11;"></span>
+                    <span id="idMar1Item13" class="marMid" style="grid-column: 31; grid-row: 11;"></span>
+                    <span id="idMar1Item14" class="marMid" style="grid-column: 32; grid-row: 11;"></span>
+                    <span id="idMar1Item15" class="marMid" style="grid-column: 33; grid-row: 11;"></span>
+                    <span id="idMar1Item16" class="marMid" style="grid-column: 34; grid-row: 11;"></span>
+                    <span id="idMar1Item17" class="marMid" style="grid-column: 35; grid-row: 11;"></span>
+                    <span id="idMar1Item18" class="marMid" style="grid-column: 36; grid-row: 11;"></span>
+                    <span id="idMar1Item19" class="marMid" style="grid-column: 37; grid-row: 11;"></span>
+                    <span id="idMar1Item20" class="marRight" style="grid-column: 38; grid-row: 11;"></span>
+                    <!-- fim Mid 1 -->
+                    <!-- Mid 2 -->
+                    <span id="idMar1Item21" class="marLeft" style="grid-column: 29; grid-row: 12;"></span>
+                    <span id="idMar1Item22" class="marMid" style="grid-column: 30; grid-row: 12;"></span>
+                    <span id="idMar1Item23" class="marMid" style="grid-column: 31; grid-row: 12;"></span>
+                    <span id="idMar1Item24" class="marMid" style="grid-column: 32; grid-row: 12;"></span>
+                    <span id="idMar1Item25" class="marMid" style="grid-column: 33; grid-row: 12;"></span>
+                    <span id="idMar1Item26" class="marMid" style="grid-column: 34; grid-row: 12;"></span>
+                    <span id="idMar1Item27" class="marMid" style="grid-column: 35; grid-row: 12;"></span>
+                    <span id="idMar1Item28" class="marMid" style="grid-column: 36; grid-row: 12;"></span>
+                    <span id="idMar1Item29" class="marMid" style="grid-column: 37; grid-row: 12;"></span>
+                    <span id="idMar1Item30" class="marRight" style="grid-column: 38; grid-row: 12;"></span>
+                    <!-- fim Mid 2 -->
+                    <!-- Mid 3 -->
+                    <span id="idMar1Item31" class="marLeft" style="grid-column: 29; grid-row: 13;"></span>
+                    <span id="idMar1Item32" class="marMid" style="grid-column: 30; grid-row: 13;"></span>
+                    <span id="idMar1Item33" class="marMid" style="grid-column: 31; grid-row: 13;"></span>
+                    <span id="idMar1Item34" class="marMid" style="grid-column: 32; grid-row: 13;"></span>
+                    <span id="idMar1Item35" class="marMid" style="grid-column: 33; grid-row: 13;"></span>
+                    <span id="idMar1Item36" class="marMid" style="grid-column: 34; grid-row: 13;"></span>
+                    <span id="idMar1Item37" class="marMid" style="grid-column: 35; grid-row: 13;"></span>
+                    <span id="idMar1Item38" class="marMid" style="grid-column: 36; grid-row: 13;"></span>
+                    <span id="idMar1Item39" class="marMid" style="grid-column: 37; grid-row: 13;"></span>
+                    <span id="idMar1Item40" class="marRight" style="grid-column: 38; grid-row: 13;"></span>
+                    <!-- fim Mid 3 -->
+                    <!-- Mid 4 -->
+                    <span id="idMar1Item41" class="marLeft" style="grid-column: 29; grid-row: 14;"></span>
+                    <span id="idMar1Item42" class="marMid" style="grid-column: 30; grid-row: 14;"></span>
+                    <span id="idMar1Item43" class="marMid" style="grid-column: 31; grid-row: 14;"></span>
+                    <span id="idMar1Item44" class="marMid" style="grid-column: 32; grid-row: 14;"></span>
+                    <span id="idMar1Item45" class="marMid" style="grid-column: 33; grid-row: 14;"></span>
+                    <span id="idMar1Item46" class="marMid" style="grid-column: 34; grid-row: 14;"></span>
+                    <span id="idMar1Item47" class="marMid" style="grid-column: 35; grid-row: 14;"></span>
+                    <span id="idMar1Item48" class="marMid" style="grid-column: 36; grid-row: 14;"></span>
+                    <span id="idMar1Item49" class="marMid" style="grid-column: 37; grid-row: 14;"></span>
+                    <span id="idMar1Item50" class="marRight" style="grid-column: 38; grid-row: 14;"></span>
+                    <!-- fim Mid 4 -->
+                    <!-- Mid 5 -->
+                    <span id="idMar1Item51" class="marLeft" style="grid-column: 29; grid-row: 15;"></span>
+                    <span id="idMar1Item52" class="marMid" style="grid-column: 30; grid-row: 15;"></span>
+                    <span id="idMar1Item53" class="marMid" style="grid-column: 31; grid-row: 15;"></span>
+                    <span id="idMar1Item54" class="marMid" style="grid-column: 32; grid-row: 15;"></span>
+                    <span id="idMar1Item55" class="marMid" style="grid-column: 33; grid-row: 15;"></span>
+                    <span id="idMar1Item56" class="marMid" style="grid-column: 34; grid-row: 15;"></span>
+                    <span id="idMar1Item57" class="marMid" style="grid-column: 35; grid-row: 15;"></span>
+                    <span id="idMar1Item58" class="marMid" style="grid-column: 36; grid-row: 15;"></span>
+                    <span id="idMar1Item59" class="marMid" style="grid-column: 37; grid-row: 15;"></span>
+                    <span id="idMar1Item60" class="marRight" style="grid-column: 38; grid-row: 15;"></span>
+                    <!-- fim Mid 5 -->
+                    <!-- Mid 6 -->
+                    <span id="idMar1Item61" class="marLeft" style="grid-column: 29; grid-row: 16;"></span>
+                    <span id="idMar1Item62" class="marMid" style="grid-column: 30; grid-row: 16;"></span>
+                    <span id="idMar1Item63" class="marMid" style="grid-column: 31; grid-row: 16;"></span>
+                    <span id="idMar1Item64" class="marMid" style="grid-column: 32; grid-row: 16;"></span>
+                    <span id="idMar1Item65" class="marMid" style="grid-column: 33; grid-row: 16;"></span>
+                    <span id="idMar1Item66" class="marMid" style="grid-column: 34; grid-row: 16;"></span>
+                    <span id="idMar1Item67" class="marMid" style="grid-column: 35; grid-row: 16;"></span>
+                    <span id="idMar1Item68" class="marMid" style="grid-column: 36; grid-row: 16;"></span>
+                    <span id="idMar1Item69" class="marMid" style="grid-column: 37; grid-row: 16;"></span>
+                    <span id="idMar1Item70" class="marRight" style="grid-column: 38; grid-row: 16;"></span>
+                    <!-- fim Mid 6 -->
+                    <!-- Bot -->
+                    <span id="idMar1Item71" class="marBotLeft" style="grid-column: 29; grid-row: 17;"></span>
+                    <span id="idMar1Item72" class="marBot" style="grid-column: 30; grid-row: 17;"></span>
+                    <span id="idMar1Item73" class="marBot" style="grid-column: 31; grid-row: 17;"></span>
+                    <span id="idMar1Item74" class="marBot" style="grid-column: 32; grid-row: 17;"></span>
+                    <span id="idMar1Item75" class="marBot" style="grid-column: 33; grid-row: 17;"></span>
+                    <span id="idMar1Item76" class="marBot" style="grid-column: 34; grid-row: 17;"></span>
+                    <span id="idMar1Item77" class="marBot" style="grid-column: 35; grid-row: 17;"></span>
+                    <span id="idMar1Item78" class="marBot" style="grid-column: 36; grid-row: 17;"></span>
+                    <span id="idMar1Item79" class="marBot" style="grid-column: 37; grid-row: 17;"></span>
+                    <span id="idMar1Item80" class="marBotRight" style="grid-column: 38; grid-row: 17;"></span>
+                    <!-- fim Bot -->
+                    <!--  -->
+                    <span id="idPedra1" class="pedregulho" style="grid-column: 3; grid-row: 3;"></span>
+                    <span id="idPedra2" class="pedregulho" style="grid-column: 3; grid-row: 4;"></span>
+                    <span id="idPedra3" class="pedregulho" style="grid-column: 3; grid-row: 5;"></span>
+                    <span id="idPedra4" class="pedregulho" style="grid-column: 3; grid-row: 6;"></span>
+                    <span id="idPedra5" class="pedregulho" style="grid-column: 3; grid-row: 7;"></span>
+                    <span class="misterioso" style="grid-column: 10; grid-row: 1;"></span>
+                </section>
+                <section id="idMapaCasa1" class="casa1Terreno">
+                    
+                </section>
+            </section>
+            <section class="right">
+                <div id="idQuestLog" class="questLog">
+                    <div class="sagas">
+                        <!-- <div class="saga" id="idSagaClassica">
+                            <span>Saga Clássica</span>
+                        </div>
+                        <div class="saga" id="idSagaShippuden">
+                            <span>Saga Shippuden</span>
+                        </div>
+                        <div class="saga" id="idSagaBoruto">
+                            <span>Saga Boruto</span>
+                        </div> -->
+                    </div>
+                    
+                    <div id="idContainerQuest" class="containerQuest">
+                        <div class="containerQuestSagas">
+                            <div class="questSagasTitle">
+                                <!-- <span>Saga Clássica</span> -->
+                            </div>
+                            <div id="idQuestSagasConteudo" class="questSagasConteudo">
+                                <!-- <span class="questSelecionada">Missão 1</span>
+                                <span>Missão 2</span> -->
+                            </div>
+                        </div>
+                        
+                        <div id="idContainerQuestAtual" class="containerQuestAtual">
+                            <div class="questAtualTitle">
+                                <!-- <span>Missão 1</span> -->
+                            </div>
+                            <!-- <hr> -->
+                            <div class="questAtualConteudo">
+                                <div class="objetivo">
+                                    <!-- <span>- Mizuki: 0/1</span>
+                                    <span>- Mizuki Sombra: 0/3</span> -->
+                                </div>
+                                <div class="descricaoObjetivo">
+                                    <!-- <span>Derrote o Mizuki e depois as sombras do Mizuki!</span> -->
+                                </div>
+                                <div class="msgCompletar">
+                                    <!-- <span>Complete com o Iruka.</span> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="contentAbsolute" style="display: none;">
+                <!-- <article class="dialogoNpc">
+                    <span class="nameNpc">Misterioso</span>: As sombras sussurram que você busca o caminho através do portão... mas o guardião exige um tributo de luz. Traga-me 20 Moedas de Ouro perdidas nestas terras. Somente quando o brilho do metal for suficiente para cegar o abismo, eu revelarei a passagem oculta. Vá, pequeno viajante, o tempo é um luxo que você não possui. <br><br>
+                    <div class="respostas">
+                        <span class="accept">Aceitar - pressione c</span>
+                        <span class="fechar">Fechar - pressione r</span>
+                    </div>
+                    <br>
+                </article> -->
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>
