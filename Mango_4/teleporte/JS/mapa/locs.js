@@ -1,4 +1,5 @@
 export let locsItemsMapa = [
+    // test
     {
         nome: 'Personagem',
         x: 1,
