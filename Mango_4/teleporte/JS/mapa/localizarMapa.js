@@ -34,12 +34,12 @@ export function attItensMapa() {
             itemLocsItemsMapa = document.createElement('div')
         } else {
             itemLocsItemsMapa = document.createElement('span')
+            itemLocsItemsMapa.style.gridColumn = itemLocal.x
+            itemLocsItemsMapa.style.gridRow = itemLocal.y
         }
 
         itemLocsItemsMapa.id = `id${itemLocal.nome}`
         itemLocsItemsMapa.classList.add(itemLocal.skinClass)
-        itemLocsItemsMapa.style.gridColumn = itemLocal.x
-        itemLocsItemsMapa.style.gridRow = itemLocal.y
 
         arrayLocsItemsMapa.push(itemLocsItemsMapa)
     }

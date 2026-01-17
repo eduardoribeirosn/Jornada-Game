@@ -88,6 +88,16 @@ export let locsItemsMapa = {
             npc: false
         },
         {
+            nome: 'Casa1TapeteEntrada',
+            x: 15,
+            y: 18,
+            solid: false,
+            coletavel: false,
+            skin: './assets/cenario/casa_1/tapeteVermelho.png',
+            skinClass: 'casa1TapeteEntrada',
+            npc: false
+        },
+        {
             nome: 'Casa1Porta',
             x: 15,
             y: 16,
@@ -1009,6 +1019,15 @@ export let locsItemsMapa = {
         },
     ],
     idMapaCasa1: [
-
+        {
+            nome: 'Casa1TapeteSaida',
+            x: 10,
+            y: 14,
+            solid: false,
+            coletavel: false,
+            skin: './assets/cenario/casa_1/tapeteVermelho.png',
+            skinClass: 'casa1TapeteSaida',
+            npc: false
+        },
     ]
 }

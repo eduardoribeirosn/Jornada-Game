@@ -19,5 +19,5 @@ export function darRecompensa(npcMissao, missaoConcluida) {
     }
 
     // Test
-    teleportarPersonagem('idMapaCasa1', 14, 10)
+    teleportarPersonagem('idMapaCasa1', 13, 10)
 }

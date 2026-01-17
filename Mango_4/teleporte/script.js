@@ -1,5 +1,5 @@
 import { interagirAll } from "./JS/interacao/interagir.js"
-import { localizarMapa } from "./JS/mapa/localizarMapa.js"
+import { localizarMapa, localizarNomeMapa } from "./JS/mapa/localizarMapa.js"
 import { invPersonagem } from "./JS/personagem/inventario.js"
 import { attProtocoloQuestLog } from "./JS/personagem/missao/attProtocoQuestLog.js"
 import { questLogPersonagem } from "./JS/personagem/missao/questLog.js"
@@ -13,6 +13,10 @@ var trocarSkinIntervalo = ''
 // Função para o personagem andar
 window.addEventListener('keydown', (ev) => {
     let infoLocsItemsMapa = localizarMapa()
+
+    let gridCompleto = document.getElementById(localizarNomeMapa()).style.gridTemplate.split('/')
+    let gridY = gridCompleto[0].split(',')[0].slice(7)
+    let gridX = gridCompleto[1].split(',')[0].slice(8)
 
     let tecla = ev.key
     let vertical = Number(document.documentElement.style.getPropertyValue('--posYPersonagem'))
@@ -33,7 +37,7 @@ window.addEventListener('keydown', (ev) => {
         
         trocarSkinAndando('tras')
         
-        if (vertical < 29 && possoAndarProximaLoc(horizontal, (vertical + 1))) { // Limita o personagem a não sair do mapa, limita o personagem a não passar por blocos sólidos.
+        if (vertical < (gridY - 1) && possoAndarProximaLoc(horizontal, (vertical + 1))) { // Limita o personagem a não sair do mapa, limita o personagem a não passar por blocos sólidos.
             document.documentElement.style.setProperty('--posYPersonagem', (vertical + 1))
             infoLocsItemsMapa[0].y = vertical + 1
         }
@@ -51,7 +55,7 @@ window.addEventListener('keydown', (ev) => {
         
         trocarSkinAndando('direita')
         
-        if (horizontal < 50 && possoAndarProximaLoc((horizontal + 1), vertical)) { // Limita o personagem a não sair do mapa, limita o personagem a não passar por blocos sólidos.
+        if (horizontal < (gridX) && possoAndarProximaLoc((horizontal + 1), vertical)) { // Limita o personagem a não sair do mapa, limita o personagem a não passar por blocos sólidos.
             document.documentElement.style.setProperty('--posXPersonagem', (horizontal + 1))
             infoLocsItemsMapa[0].x = horizontal + 1
         }

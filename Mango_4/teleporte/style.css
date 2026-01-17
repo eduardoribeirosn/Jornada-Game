@@ -149,7 +149,7 @@ h1 {
     width: 288px;
     height: 224px;
     display: grid;
-    grid-template: repeat(14, 16px) / repeat(18, 16px);
+    /* grid-template: repeat(14, 16px) / repeat(18, 16px); */
     background-image: url(./assets/cenario_2/pisoMadeira.png);
     image-rendering: pixelated;
 }
@@ -191,6 +191,10 @@ h1 {
 }
 
 /* Começo Skin Casa1 */
+.casa1TapeteEntrada, .casa1TapeteSaida {
+    background-image: url(assets/cenario/casa_1/tapeteVermelho.png);
+}
+
 .casa1Porta {
     background-image: url(assets/cenario/casa_1/Casa1_porta.png);
     background-position: center;
