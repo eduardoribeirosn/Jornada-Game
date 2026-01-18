@@ -1,0 +1,504 @@
+:root {
+    --imagePersonagem: url(./assets/personagem/tras/little-man-1-32px_tras_1.png);
+    --posYPersonagem: 1;
+    --posXPersonagem: 1;
+
+    /* Fonts */
+    --FontTitle: "Press Start 2P", system-ui;
+    --FontItens1: "VT323", monospace;
+    --FontItens2: "Pixelify Sans", sans-serif; /* 400 e 700 */
+    --FontQuantidade: "Silkscreen", sans-serif; /* 400 e 700 */
+    --FontPlacar: "DotGothic16", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Começo Título */
+h1 {
+    margin: 2rem;
+    text-align: center;
+    font-family: var(--FontTitle);
+}
+/* Fim Título */
+
+/* Começo Espaço do Jogo */
+.spaceGame {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Config do Top */
+.top {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Config do Top */
+
+/* Começo Placar */
+.placar {
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+    margin-bottom: .5rem;
+    font-family: var(--FontPlacar);
+}
+
+.placar .pontos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+}
+
+.placar .tempo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 2rem;
+}
+
+/* Fim Placar */
+
+/* Config Mid */
+.mid {
+    width: 95%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+/* Config Mid */
+
+/* MID LEFT */
+.left {
+    width: 500px;
+}
+/* Fim MID LEFT */
+
+/* Começo do Inventário */
+.inventario {
+    width: min-content;
+    background-color: rgb(233, 236, 42);
+    border-radius: 1rem;
+    padding: .5rem;
+    margin: .5rem;
+}
+
+.inventario .miniTitleInventario {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--FontTitle);
+    margin: .5rem;
+}
+
+.inventario tr {
+    display: flex;
+}
+
+.inventario td {
+    height: 2.5rem;
+    width: 2.5rem;
+    border: 1px solid #000;
+    border-radius: .5rem;
+    margin: 0.2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.inventario td img {
+    width: 1.2rem;
+}
+
+.inventario td span {
+    font-size: .8rem;
+    font-family: var(--FontQuantidade);
+    font-size: 700;
+}
+
+/* Fim do Inventário */
+
+/* Mapa do Jogo - Mapa (Inicial) */
+.blocks {
+    position: relative;
+    width: 800px;
+    height: 480px;
+    display: grid;
+    /* grid-template: repeat(30, 16px) / repeat(50, 16px); */
+    background-image: url(./assets/cenario/firstGrama.png);
+    image-rendering: pixelated;
+}
+
+/* Mapa do Jogo - Mapa Casa1 - Terreno */
+.casa1Terreno {
+    position: relative;
+    width: 288px;
+    height: 224px;
+    display: grid;
+    /* grid-template: repeat(14, 16px) / repeat(18, 16px); */
+    background-image: url(./assets/cenario_2/pisoMadeira.png);
+    image-rendering: pixelated;
+}
+
+/* Personagem */
+.personagem {
+    background-image: var(--imagePersonagem);
+    background-position: center;
+    background-size: cover;
+    width: 16px;
+    height: 32px;
+    grid-column: var(--posXPersonagem);
+    grid-row: var(--posYPersonagem);
+    transition: 1s;
+    z-index: 2;
+}
+
+/* Skin do Baú */
+.chest {
+    background-image: url(assets/cenario/objetos/chest.png);
+}
+
+/* Skin da Moeda de Ouro */
+.moedaOuro {
+    background-image: url(assets/cenario/objetos/moedaOuro.png);
+}
+
+/* Skin do Pedregulho */
+.pedregulho {
+    background-image: url(assets/cenario/objetos/pedregulho.png);
+}
+
+/* Skin do Npc Misterioso */
+.misterioso {
+    background-image: url(assets/npc/npc_missao_1/misterioso.png);
+    background-position: center;
+    background-size: cover;
+    height: 2rem;
+}
+
+/* Começo Skin Casa1 */
+.casa1TapeteEntrada, .casa1TapeteSaida {
+    background-image: url(assets/cenario/casa_1/tapeteVermelho.png);
+}
+
+.casa1Porta {
+    background-image: url(assets/cenario/casa_1/Casa1_porta.png);
+    background-position: center;
+    background-size: cover;
+    height: 2rem;
+}
+
+.casa1Item1 {
+    background-image: url(assets/cenario/casa_1/Casa1_pt1.png);
+}
+
+.casa1Item2 {
+    background-image: url(assets/cenario/casa_1/Casa1_pt2.png);
+}
+
+.casa1Item3 {
+    background-image: url(assets/cenario/casa_1/Casa1_pt3.png);
+}
+
+.casa1Item4 {
+    background-image: url(assets/cenario/casa_1/Casa1_pt4.png);
+}
+
+.casa1Item5 {
+    background-image: url(assets/cenario/casa_1/Casa1_pt5.png);
+}
+
+.casa1Item6 {
+    background-image: url(assets/cenario/casa_1/Casa1_pt6.png);
+}
+
+.casa1Item7 {
+    background-image: url(assets/cenario/casa_1/Casa1_pt7.png);
+}
+
+.casa1Item8 {
+    background-image: url(assets/cenario/casa_1/Casa1_pt8.png);
+}
+
+.casa1Item9 {
+    background-image: url(assets/cenario/casa_1/Casa1_pt9.png);
+}
+
+.casa1Item10 {
+    background-image: url(assets/cenario/casa_1/Casa1_pt10.png);
+}
+/* Fim Casa1 */
+
+/* Começo Skin Mar */
+.marMid {
+    background-image: url(assets/cenario/mar/mar_completo.png);
+}
+
+.marTop {
+    background-image: url(assets/cenario/mar/mar_top.png);
+}
+
+.marTopRight {
+    background-image: url(assets/cenario/mar/mar_topRight.png);
+}
+
+.marRight {
+    background-image: url(assets/cenario/mar/mar_right.png);
+}
+
+.marBotRight {
+    background-image: url(assets/cenario/mar/mar_botRight.png);
+}
+
+.marBot {
+    background-image: url(assets/cenario/mar/mar_bot.png);
+}
+
+.marBotLeft {
+    background-image: url(assets/cenario/mar/mar_botLeft.png);
+}
+
+.marLeft {
+    background-image: url(assets/cenario/mar/mar_left.png);
+}
+
+.marTopLeft {
+    background-image: url(assets/cenario/mar/mar_topLeft.png);
+}
+/* Fim Mar */
+
+/* Dialogo do Npc Misterioso */
+.contentAbsolute {
+    background-color: rgba(13, 20, 85, 0.8);
+    position: absolute;
+    width: 35%;
+    height: 20vh;
+    overflow-y: auto;
+    border-radius: .4rem;
+}
+
+/* .dialogoNpc {
+    margin: .8rem;
+    color: #8f8c02;
+    font-size: 1.1rem;
+    font-family: var(--FontItens2);
+}
+
+.nameNpc {
+    color: #000;
+    font-size: 1.2rem;
+} */
+
+.respostas {
+    display: flex;
+    justify-content: space-around;
+}
+
+.accept {
+    color: #31b458;
+}
+
+.next {
+    color: #3195b4;
+}
+
+.fechar {
+    color: #b62727;
+}
+
+.contentAbsolute::-webkit-scrollbar {
+    display: none;
+}
+
+/* Posição do Baú 1 */
+#idChest1 {
+    grid-column: 4;
+    grid-row: 3;
+}
+
+
+/* MID RIGHT */
+.right {
+    width: 500px;
+}
+/* Fim MID RIGHT */
+
+/* Começo do QuestLog */
+.questLog {
+    width: 500px;
+    height: 300px;
+    display: flex;
+    margin: .5rem;
+}
+
+.questLog .sagas {
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+    width: 20%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.questLog .sagas::-webkit-scrollbar {
+    display: none;
+}
+
+.questLog .sagas .saga {
+    font-size: .8rem;
+    background-color: #b9b2b2;
+    width: 100%;
+    height: 30px;
+    margin-top: .5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    border-radius: .4rem 0 0 .4rem;
+    overflow-y: auto;
+    cursor: pointer;
+}
+
+.questLog .sagas .saga::-webkit-scrollbar {
+    display: none;
+}
+
+.questLog .sagas .sagaSelecionada {
+    background-color: #383838;
+    color: #fff;
+}
+
+.questLog .sagas .saga span {
+    width: 95%;
+}
+
+.questLog .containerQuest {
+    background-color: #C6C6C6;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    border-radius: 0.2rem;
+}
+
+.questLog .containerQuest .containerQuestSagas {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+}
+
+.questLog .containerQuest .containerQuestSagas .questSagasTitle {
+    width: 96%;
+    height: 20px;
+    margin-bottom: 3px;
+    font-family: fantasy;
+    padding: 0.2rem;
+    overflow-y: auto;
+}
+
+.questLog .containerQuest .containerQuestSagas .questSagasTitle::-webkit-scrollbar {
+    display: none;
+}
+
+.questLog .containerQuest .containerQuestSagas .questSagasConteudo {
+    width: 95%;
+    height: 90%;
+    background-color: #383838;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    align-items: center;
+    overflow-y: auto;
+    margin-left: .15rem;
+    border-radius: 0.2rem;
+}
+
+.questLog .containerQuest .containerQuestSagas .questSagasConteudo::-webkit-scrollbar {
+    display: none;
+}
+
+.questLog .containerQuest .containerQuestSagas .questSagasConteudo span {
+    width: 95%;
+    text-align: center;
+    margin-top: 0.3rem;
+    cursor: pointer;
+}
+
+.questLog .containerQuest .containerQuestSagas .questSagasConteudo .questSelecionada {
+    border: solid 2px #fff;
+}
+
+.questLog .containerQuest .containerQuestAtual {
+    width: 60%;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualTitle {
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    padding: .2rem;
+    overflow-y: auto;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualTitle::-webkit-scrollbar {
+    display: none;
+}
+
+.questLog .containerQuest .containerQuestAtual hr {
+    width: 98%;
+    background-color: #000;
+    height: 1px;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualConteudo {
+    width: 98%;
+    height: 88%;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualConteudo .objetivo {
+    height: 35%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualConteudo .objetivo::-webkit-scrollbar {
+    display: none;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualConteudo .descricaoObjetivo {
+    height: 43%;
+    margin-top: 1rem;
+    overflow-y: auto;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualConteudo .descricaoObjetivo::-webkit-scrollbar {
+    display: none;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualConteudo .msgCompletar {
+    height: 10%;
+    margin-top: 1rem;
+    overflow-y: auto;
+}
+
+.questLog .containerQuest .containerQuestAtual .questAtualConteudo .msgCompletar::-webkit-scrollbar {
+    display: none;
+}
+
+/* Fim do Jogo */
+
+/* Fim Espaço do Jogo */
