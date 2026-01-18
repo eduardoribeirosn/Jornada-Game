@@ -17,7 +17,4 @@ export function darRecompensa(npcMissao, missaoConcluida) {
             }
         }
     }
-
-    // Test
-    teleportarPersonagem('idMapaCasa1', 13, 10)
 }

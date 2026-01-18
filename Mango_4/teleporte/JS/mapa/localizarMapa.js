@@ -35,7 +35,11 @@ export function attItensMapa() {
         } else {
             itemLocsItemsMapa = document.createElement('span')
             itemLocsItemsMapa.style.gridColumn = itemLocal.x
-            itemLocsItemsMapa.style.gridRow = itemLocal.y
+            if (itemLocal.npc) {
+                itemLocsItemsMapa.style.gridRow = (itemLocal.y - 1)
+            } else {
+                itemLocsItemsMapa.style.gridRow = itemLocal.y
+            }
         }
 
         itemLocsItemsMapa.id = `id${itemLocal.nome}`

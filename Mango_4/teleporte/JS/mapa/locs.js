@@ -7,6 +7,7 @@ export let locsItemsMapa = {
             y: 1,
             solid: false,
             coletavel: false,
+            teleporte: false,
             skin: '',
             skinClass: 'personagem',
             npc: false
@@ -17,6 +18,7 @@ export let locsItemsMapa = {
             y: 2,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: 'assets/npc/npc_missao_1/misterioso.png',
             skinClass: 'misterioso',
             npc: true,
@@ -43,6 +45,7 @@ export let locsItemsMapa = {
             y: 3,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/objetos/pedregulho.png',
             skinClass: 'pedregulho',
             npc: false
@@ -53,6 +56,7 @@ export let locsItemsMapa = {
             y: 4,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/objetos/pedregulho.png',
             skinClass: 'pedregulho',
             npc: false
@@ -63,6 +67,7 @@ export let locsItemsMapa = {
             y: 5,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/objetos/pedregulho.png',
             skinClass: 'pedregulho',
             npc: false
@@ -73,6 +78,7 @@ export let locsItemsMapa = {
             y: 6,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/objetos/pedregulho.png',
             skinClass: 'pedregulho',
             npc: false
@@ -83,6 +89,7 @@ export let locsItemsMapa = {
             y: 7,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/objetos/pedregulho.png',
             skinClass: 'pedregulho',
             npc: false
@@ -93,6 +100,12 @@ export let locsItemsMapa = {
             y: 18,
             solid: false,
             coletavel: false,
+            teleporte: true,
+            infoTeleporte: {
+                localTeleporte: 'idMapaCasa1',
+                posXTeleporte: 10,
+                posYTeleporte: 13
+            },
             skin: './assets/cenario/casa_1/tapeteVermelho.png',
             skinClass: 'casa1TapeteEntrada',
             npc: false
@@ -103,6 +116,7 @@ export let locsItemsMapa = {
             y: 16,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/casa_1/Casa1_porta.png',
             skinClass: 'casa1Porta',
             npc: false
@@ -113,8 +127,9 @@ export let locsItemsMapa = {
             y: 17,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/casa_1/Casa1_porta.png',
-            skinClass: '',
+            skinClass: 'FALSEcasa1Porta2',
             npc: false
         },
         {
@@ -123,6 +138,7 @@ export let locsItemsMapa = {
             y: 17,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/casa_1/Casa1_pt1.png',
             skinClass: 'casa1Item1',
             npc: false
@@ -133,6 +149,7 @@ export let locsItemsMapa = {
             y: 17,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/casa_1/Casa1_pt2.png',
             skinClass: 'casa1Item2',
             npc: false
@@ -143,6 +160,7 @@ export let locsItemsMapa = {
             y: 16,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/casa_1/Casa1_pt3.png',
             skinClass: 'casa1Item3',
             npc: false
@@ -153,6 +171,7 @@ export let locsItemsMapa = {
             y: 16,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/casa_1/Casa1_pt4.png',
             skinClass: 'casa1Item4',
             npc: false
@@ -163,6 +182,7 @@ export let locsItemsMapa = {
             y: 15,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/casa_1/Casa1_pt5.png',
             skinClass: 'casa1Item5',
             npc: false
@@ -173,6 +193,7 @@ export let locsItemsMapa = {
             y: 15,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/casa_1/Casa1_pt6.png',
             skinClass: 'casa1Item6',
             npc: false
@@ -183,6 +204,7 @@ export let locsItemsMapa = {
             y: 15,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/casa_1/Casa1_pt7.png',
             skinClass: 'casa1Item7',
             npc: false
@@ -193,6 +215,7 @@ export let locsItemsMapa = {
             y: 14,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/casa_1/Casa1_pt8.png',
             skinClass: 'casa1Item8',
             npc: false
@@ -203,6 +226,7 @@ export let locsItemsMapa = {
             y: 14,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/casa_1/Casa1_pt9.png',
             skinClass: 'casa1Item9',
             npc: false
@@ -213,6 +237,7 @@ export let locsItemsMapa = {
             y: 14,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/casa_1/Casa1_pt10.png',
             skinClass: 'casa1Item10',
             npc: false
@@ -223,6 +248,7 @@ export let locsItemsMapa = {
             y: 10,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marTopLeft',
             npc: false
@@ -233,6 +259,7 @@ export let locsItemsMapa = {
             y: 10,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marTop',
             npc: false
@@ -243,6 +270,7 @@ export let locsItemsMapa = {
             y: 10,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marTop',
             npc: false
@@ -253,6 +281,7 @@ export let locsItemsMapa = {
             y: 10,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marTop',
             npc: false
@@ -263,6 +292,7 @@ export let locsItemsMapa = {
             y: 10,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marTop',
             npc: false
@@ -273,6 +303,7 @@ export let locsItemsMapa = {
             y: 10,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marTop',
             npc: false
@@ -283,6 +314,7 @@ export let locsItemsMapa = {
             y: 10,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marTop',
             npc: false
@@ -293,6 +325,7 @@ export let locsItemsMapa = {
             y: 10,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marTop',
             npc: false
@@ -303,6 +336,7 @@ export let locsItemsMapa = {
             y: 10,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marTop',
             npc: false
@@ -313,6 +347,7 @@ export let locsItemsMapa = {
             y: 10,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marTopRight',
             npc: false
@@ -323,6 +358,7 @@ export let locsItemsMapa = {
             y: 11,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marLeft',
             npc: false
@@ -333,6 +369,7 @@ export let locsItemsMapa = {
             y: 11,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -343,6 +380,7 @@ export let locsItemsMapa = {
             y: 11,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -353,6 +391,7 @@ export let locsItemsMapa = {
             y: 11,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -363,6 +402,7 @@ export let locsItemsMapa = {
             y: 11,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -373,6 +413,7 @@ export let locsItemsMapa = {
             y: 11,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -383,6 +424,7 @@ export let locsItemsMapa = {
             y: 11,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -393,6 +435,7 @@ export let locsItemsMapa = {
             y: 11,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -403,6 +446,7 @@ export let locsItemsMapa = {
             y: 11,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -413,6 +457,7 @@ export let locsItemsMapa = {
             y: 11,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marRight',
             npc: false
@@ -423,6 +468,7 @@ export let locsItemsMapa = {
             y: 12,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marLeft',
             npc: false
@@ -433,6 +479,7 @@ export let locsItemsMapa = {
             y: 12,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -443,6 +490,7 @@ export let locsItemsMapa = {
             y: 12,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -453,6 +501,7 @@ export let locsItemsMapa = {
             y: 12,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -463,6 +512,7 @@ export let locsItemsMapa = {
             y: 12,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -473,6 +523,7 @@ export let locsItemsMapa = {
             y: 12,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -483,6 +534,7 @@ export let locsItemsMapa = {
             y: 12,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -493,6 +545,7 @@ export let locsItemsMapa = {
             y: 12,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -503,6 +556,7 @@ export let locsItemsMapa = {
             y: 12,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -513,6 +567,7 @@ export let locsItemsMapa = {
             y: 12,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marRight',
             npc: false
@@ -523,6 +578,7 @@ export let locsItemsMapa = {
             y: 13,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marLeft',
             npc: false
@@ -533,6 +589,7 @@ export let locsItemsMapa = {
             y: 13,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -543,6 +600,7 @@ export let locsItemsMapa = {
             y: 13,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -553,6 +611,7 @@ export let locsItemsMapa = {
             y: 13,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -563,6 +622,7 @@ export let locsItemsMapa = {
             y: 13,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -573,6 +633,7 @@ export let locsItemsMapa = {
             y: 13,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -583,6 +644,7 @@ export let locsItemsMapa = {
             y: 13,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -593,6 +655,7 @@ export let locsItemsMapa = {
             y: 13,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -603,6 +666,7 @@ export let locsItemsMapa = {
             y: 13,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -613,6 +677,7 @@ export let locsItemsMapa = {
             y: 13,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marRight',
             npc: false
@@ -623,6 +688,7 @@ export let locsItemsMapa = {
             y: 14,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marLeft',
             npc: false
@@ -633,6 +699,7 @@ export let locsItemsMapa = {
             y: 14,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -643,6 +710,7 @@ export let locsItemsMapa = {
             y: 14,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -653,6 +721,7 @@ export let locsItemsMapa = {
             y: 14,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -663,6 +732,7 @@ export let locsItemsMapa = {
             y: 14,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -673,6 +743,7 @@ export let locsItemsMapa = {
             y: 14,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -683,6 +754,7 @@ export let locsItemsMapa = {
             y: 14,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -693,6 +765,7 @@ export let locsItemsMapa = {
             y: 14,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -703,6 +776,7 @@ export let locsItemsMapa = {
             y: 14,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -713,6 +787,7 @@ export let locsItemsMapa = {
             y: 14,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marRight',
             npc: false
@@ -723,6 +798,7 @@ export let locsItemsMapa = {
             y: 15,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marLeft',
             npc: false
@@ -733,6 +809,7 @@ export let locsItemsMapa = {
             y: 15,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -743,6 +820,7 @@ export let locsItemsMapa = {
             y: 15,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -753,6 +831,7 @@ export let locsItemsMapa = {
             y: 15,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -763,6 +842,7 @@ export let locsItemsMapa = {
             y: 15,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -773,6 +853,7 @@ export let locsItemsMapa = {
             y: 15,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -783,6 +864,7 @@ export let locsItemsMapa = {
             y: 15,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -793,6 +875,7 @@ export let locsItemsMapa = {
             y: 15,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -803,6 +886,7 @@ export let locsItemsMapa = {
             y: 15,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -813,6 +897,7 @@ export let locsItemsMapa = {
             y: 15,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marRight',
             npc: false
@@ -823,6 +908,7 @@ export let locsItemsMapa = {
             y: 16,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marLeft',
             npc: false
@@ -833,6 +919,7 @@ export let locsItemsMapa = {
             y: 16,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -843,6 +930,7 @@ export let locsItemsMapa = {
             y: 16,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -853,6 +941,7 @@ export let locsItemsMapa = {
             y: 16,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -863,6 +952,7 @@ export let locsItemsMapa = {
             y: 16,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -873,6 +963,7 @@ export let locsItemsMapa = {
             y: 16,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -883,6 +974,7 @@ export let locsItemsMapa = {
             y: 16,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -893,6 +985,7 @@ export let locsItemsMapa = {
             y: 16,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -903,6 +996,7 @@ export let locsItemsMapa = {
             y: 16,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marMid',
             npc: false
@@ -913,6 +1007,7 @@ export let locsItemsMapa = {
             y: 16,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marRight',
             npc: false
@@ -923,6 +1018,7 @@ export let locsItemsMapa = {
             y: 17,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marBotLeft',
             npc: false
@@ -933,6 +1029,7 @@ export let locsItemsMapa = {
             y: 17,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marBot',
             npc: false
@@ -943,6 +1040,7 @@ export let locsItemsMapa = {
             y: 17,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marBot',
             npc: false
@@ -953,6 +1051,7 @@ export let locsItemsMapa = {
             y: 17,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marBot',
             npc: false
@@ -963,6 +1062,7 @@ export let locsItemsMapa = {
             y: 17,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marBot',
             npc: false
@@ -973,6 +1073,7 @@ export let locsItemsMapa = {
             y: 17,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marBot',
             npc: false
@@ -983,6 +1084,7 @@ export let locsItemsMapa = {
             y: 17,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marBot',
             npc: false
@@ -993,6 +1095,7 @@ export let locsItemsMapa = {
             y: 17,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marBot',
             npc: false
@@ -1003,6 +1106,7 @@ export let locsItemsMapa = {
             y: 17,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marBot',
             npc: false
@@ -1013,6 +1117,7 @@ export let locsItemsMapa = {
             y: 17,
             solid: true,
             coletavel: false,
+            teleporte: false,
             skin: './assets/cenario/mar/mar_completo.png',
             skinClass: 'marBotRight',
             npc: false
@@ -1025,6 +1130,12 @@ export let locsItemsMapa = {
             y: 14,
             solid: false,
             coletavel: false,
+            teleporte: true,
+            infoTeleporte: {
+                localTeleporte: 'idMapa',
+                posXTeleporte: 15,
+                posYTeleporte: 17
+            },
             skin: './assets/cenario/casa_1/tapeteVermelho.png',
             skinClass: 'casa1TapeteSaida',
             npc: false

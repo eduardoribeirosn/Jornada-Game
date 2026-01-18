@@ -96,14 +96,30 @@ Após uma conversa com a IA Gemini, tive algumas ideias para criar. (Continuaç�
 
 {
 
-    #### Coisas a Fazer no Mango_4
+##### Coisas a Fazer no Mango_4
 
     - Melhorar o mapa com decorações e construções.
 
     - Fazer teleportes para outros locais.
 
+}
+
+1- Criação: Criar designs e implementar no mapa.
+
+2- Criação: Criar um sistema de teleporte de mapas.
+
+3- Criação: Utilizar o sistema de teleporte para teleportar dentro de uma casa.
+
+### Mango 5
+
+{
+
+##### Coisas a Fazer no Mango_5
+
+    - Substituir o sistema de placar por um sistema de horário
+
     - Pesquisar sobre fundos para dar sensações de tempos/temperaturas/horas diferentes.
 
 }
 
-1- Criação: Criar designs e implementar no mapa.
+1- Criação: Criar um sistema de horário.

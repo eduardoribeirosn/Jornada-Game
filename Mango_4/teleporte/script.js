@@ -154,6 +154,7 @@ export function gerarItemsAleatorias(nameItem, classNameItem, quantidade, skinIt
         itemObj.solid = false
         itemObj.coletavel = true
         itemObj.skin = skinItem
+        itemObj.skinClass = classNameItem
         itemObj.npc = false
 
         items.push([item, itemObj])

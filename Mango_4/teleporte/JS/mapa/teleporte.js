@@ -11,8 +11,8 @@ export function teleportarPersonagem(newLocation, y, x) {
     infoLocsItemsMapa.shift()
 
     // Trocou a posição dele
-    // locsItemsMapa[newLocation][0].x = x
-    // locsItemsMapa[newLocation][0].y = y
+    locsItemsMapa[newLocation][0].x = x
+    locsItemsMapa[newLocation][0].y = y
     document.documentElement.style.setProperty('--posYPersonagem', y)
     document.documentElement.style.setProperty('--posXPersonagem', x)
 
