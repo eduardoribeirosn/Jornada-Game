@@ -123,3 +123,9 @@ Após uma conversa com a IA Gemini, tive algumas ideias para criar. (Continuaç�
 }
 
 1- Criação: Criar um sistema de horário.
+
+2- Update: Trocar o sistema de placar na tela para o de horário.
+
+2.5- Bonus: Colocar sombra nos personagens.
+
+3- Criação: Criar um sistema de Cores de fundo para simular dia e noite e implementar no jogo.

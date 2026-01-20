@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teleporte - ZduardoxX</title>
+    <title>Horário - ZduardoxX</title>
     <link rel="stylesheet" href="style.css">
 
     <!-- Fonts -->
@@ -16,12 +16,15 @@
     <link href="https://fonts.googleapis.com/css2?family=DotGothic16&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Teleporte</h1>
+    <h1>Horário</h1>
     <hr>
     
     <main class="spaceGame">
         <div class="top">
-            <div class="left"></div>
+            <div class="horario">
+                <span id="idHoraTela" class="hora">07:00</span>
+            </div>
+            <!-- <div class="left"></div>
             <div class="placar">
                 <div class="pontos">
                     <span>Pontos</span>
@@ -32,7 +35,7 @@
                     <span id="idValorTempo">30</span>
                 </div>
             </div>
-            <div class="right"></div>
+            <div class="right"></div> -->
         </div>
 
         <div class="mid">
@@ -85,6 +88,7 @@
             </section>
             <section id="idMapaTotal">
                 <section id="idMapa" class="blocks" style="display: grid; grid-template: repeat(30, 16px) / repeat(50, 16px)">
+                    <div class="testEscuro"></div>
                     <div id="idPersonagem" class="personagem"></div>
                     <!-- Casa1 - Tutorial -->
                     <span id="idCasa1TapeteEntrada" class="casa1TapeteEntrada" style="grid-column: 15; grid-row: 18;"></span>

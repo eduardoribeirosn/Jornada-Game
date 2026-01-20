@@ -9,11 +9,31 @@
     --FontItens2: "Pixelify Sans", sans-serif; /* 400 e 700 */
     --FontQuantidade: "Silkscreen", sans-serif; /* 400 e 700 */
     --FontPlacar: "DotGothic16", sans-serif;
+
+    /* Fundos */
+    --backgroundColorFundo: #FFDAB9;
+    --opacityFundoGame: 0.1;
 }
 
 * {
     margin: 0;
     padding: 0;
+}
+
+/* ARRUMAR ISSO AQUI */
+body {
+    background-color: var(--backgroundColorFundo);
+    transition: background-color 5s ease;
+}
+
+.testEscuro {
+    width: 800px;
+    height: 480px;
+    pointer-events: none;
+    background-color: #000000;
+    opacity: var(--opacityFundoGame);
+    position: absolute;
+    transition: opacity 5s ease;
 }
 
 /* Começo Título */
@@ -31,7 +51,7 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 4rem;
+    margin-top: 3rem;
     margin-bottom: 1rem;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
@@ -45,30 +65,23 @@ h1 {
 }
 /* Config do Top */
 
-/* Começo Placar */
-.placar {
+/* Começo Horario */
+.horario {
     display: flex;
     width: 40%;
-    justify-content: space-around;
-    margin-bottom: .5rem;
+    justify-content: center;
+    margin-bottom: 1rem;
     font-family: var(--FontPlacar);
 }
 
-.placar .pontos {
+.horario .hora {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 2rem;
+    font-size: 3rem;
 }
 
-.placar .tempo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    font-size: 2rem;
-}
-
-/* Fim Placar */
+/* Fim Horario */
 
 /* Config Mid */
 .mid {
@@ -165,6 +178,7 @@ h1 {
     grid-row: var(--posYPersonagem);
     transition: 1s;
     z-index: 2;
+    filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 1));
 }
 
 /* Skin do Baú */
@@ -188,6 +202,7 @@ h1 {
     background-position: center;
     background-size: cover;
     height: 2rem;
+    filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 1));
 }
 
 /* Começo Skin Casa1 */

@@ -1,3 +1,4 @@
+import { attHorarioInterval } from "./JS/horario/horario.js"
 import { interagirAll } from "./JS/interacao/interagir.js"
 import { localizarMapa, localizarNomeMapa } from "./JS/mapa/localizarMapa.js"
 import { invPersonagem } from "./JS/personagem/inventario.js"
@@ -5,8 +6,7 @@ import { attProtocoloQuestLog } from "./JS/personagem/missao/attProtocoQuestLog.
 import { questLogPersonagem } from "./JS/personagem/missao/questLog.js"
 import { urlSkinsPersonagem } from "./JS/personagem/skin.js"
 
-let pontos = 0
-let tempo = 30
+attHorarioInterval
 
 var trocarSkinIntervalo = ''
 
@@ -168,23 +168,13 @@ export function gerarItemsAleatorias(nameItem, classNameItem, quantidade, skinIt
     console.log(infoLocsItemsMapa)
 }
 
-// Função para ganhar pontos assim que passar por uma moeda
+// Função para coletar itens assim que passar por cima
 function passarPorItem() {
     let infoLocsItemsMapa = localizarMapa()
     
     for (let i = 1; i < infoLocsItemsMapa.length; i++) {
         // Verifica se passou por algum item no mapa e se é coletável
         if (infoLocsItemsMapa[0].x == infoLocsItemsMapa[i].x && (infoLocsItemsMapa[0].y + 1) == infoLocsItemsMapa[i].y && infoLocsItemsMapa[i].coletavel) {
-            // Verifica se o item da Ponto
-            if (infoLocsItemsMapa[i].nome == 'Moeda de Ouro') {
-                pontos += 5
-                document.getElementById('idValorPontos').textContent = pontos
-            } else if (infoLocsItemsMapa[i].nome == 'Bau') {
-                pontos += 25
-                document.getElementById('idValorPontos').textContent = pontos
-
-            }
-
             // Verifica se é coletável e coleta
             if (infoLocsItemsMapa[i].coletavel) {
                 let quantity = 0
@@ -236,12 +226,6 @@ function passarPorItem() {
                     infoLocsItemsMapa.splice(i, 1)
                 }
             }
-            // if (infoLocsItemsMapa.length == 1 && tempo > 0) { // Aqui funcionava antes do Sistema de Solid, que sobrava apenas o personagem no mapa.
-            // if ((infoLocsItemsMapa.filter(item => item.solid == false)).length == 1 && tempo > 0) {
-            //     clearInterval(intervaloTempo)
-            //     alert(`Você venceu! Sobrou ${tempo} segundos.`)
-            //     alert("Clique 'p' para reiniciar o jogo.")
-            // }
         }
     }
 }
