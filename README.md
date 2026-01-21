@@ -129,3 +129,14 @@ Após uma conversa com a IA Gemini, tive algumas ideias para criar. (Continuaç�
 2.5- Bonus: Colocar sombra nos personagens.
 
 3- Criação: Criar um sistema de Cores de fundo para simular dia e noite e implementar no jogo.
+
+### Mango 6
+
+{
+
+#### Coisas a Fazer no Mango_6
+    - Criar algo que deixe o jogo mais imerssivo e não mostre o mapa de uma vez para o jogador
+
+}
+
+1- Criação: Criar um sistema que deixe o mapa escuro e deixe o jogador ver apenas o que está perto do personagem.
