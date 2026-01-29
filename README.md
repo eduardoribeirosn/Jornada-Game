@@ -140,3 +140,24 @@ Após uma conversa com a IA Gemini, tive algumas ideias para criar. (Continuaç�
 }
 
 1- Criação: Criar um sistema que deixe o mapa escuro e deixe o jogador ver apenas o que está perto do personagem.
+
+#### Finalização... Começo...
+
+### Mango 7
+
+###### ...
+
+{
+
+#### Coisas a Fazer no Mango_7
+
+    - Sistema Base de Personagens
+
+    - Sistema Base de Combate
+
+    - Layout de Batalha
+
+}
+
+1- Criação: Criar um sistema base de personagens.
+
